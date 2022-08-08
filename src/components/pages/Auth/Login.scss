@@ -1,0 +1,50 @@
+.login-page{
+
+    padding: 90px 0;
+    .login-text{
+        margin-left: 35px;
+        @media only screen and (max-width:640px){
+            margin-left: 0;
+        }
+        h4{
+            font-family: Roboto, sans-serif;
+            font-size: 34px;
+            line-height: 1.5;
+            margin: 0 0  35px;
+            color: #1f62c7;
+            font-weight: 600;
+        }
+        .form-group{
+            position: relative;
+            margin-bottom: 25px;
+            
+        }
+
+      
+    }
+    .input-group{
+        input{
+            border-radius: 0.5rem !important ; 
+        }
+        .input-group-prepend{
+            position: absolute;
+            right: 0;
+            height: 100%;
+            button{
+                height: 100%;
+                border-radius: 0;
+                border-radius: 0 10px 10px 0px;
+                background-color: #1f62c7;
+            }
+        }
+    }
+    .signbtn {
+        background-color: #1f62c7;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 6px 22px;  
+    margin-top: 25px;
+
+    }
+}

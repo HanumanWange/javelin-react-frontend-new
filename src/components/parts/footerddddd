@@ -1,0 +1,357 @@
+<footer class="page-footer font-small blue pt-4">
+
+
+    <div class="container-fluid text-center text-md-left">
+
+
+        <div class="row">
+
+
+            <div class="col-md-6 mt-md-0 mt-3">
+
+
+                <h5 class="text-uppercase">Footer Content</h5>
+                <p>Here you can use rows and columns to organize your footer content.</p>
+
+            </div>
+
+
+            <hr class="clearfix w-100 d-md-none pb-3">
+
+
+            <div class="col-md-3 mb-md-0 mb-3">
+
+
+                <h5 class="text-uppercase">Links</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 4</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="col-md-3 mb-md-0 mb-3">
+
+
+                <h5 class="text-uppercase">Links</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 4</a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="/"> MDBootstrap.com</a>
+    </div>
+
+
+</footer>
+
+
+
+<footer className="footer">
+
+    <div className="container-fluid">
+
+        <div className="row justify-content-between">
+
+            <div className="col-12 col-md-12 col-lg-4">
+
+
+                <div className="text-center">
+
+                    <img src="/static/images/JAVLOGO26.png" className="footer-logo" />
+
+                </div>
+
+                <div className="d-flex flex-row justify-content-around mt-4 mb-4 px-5">
+                    <a to="" target="_blank">
+                        <i className="fa fa-whatsapp" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+                    </a>
+
+                    <a to="" target="_blank">
+                        <i className="fa fa-paper-plane" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+                    </a>
+
+                    <a to="" target="_blank">
+                        <i className="fa fa-instagram" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+                <div className="d-flex flex-row justify-content-around mb-4 px-5">
+
+                    <a to="" target="_blank">
+                        <i className="fa fa-linkedin" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+                    </a>
+
+                    <a to="" target="_blank">
+                        <i className="fa fa-facebook-official" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+                    </a>
+
+                    <a to="" target="_blank">
+                        <i className="fa fa-google" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+                <p className="footer-section-address text-center">
+                    XXX, Hyderabad, Telangana, India.
+                </p>
+
+            </div>
+
+            <div className="col-12 col-md-12 col-lg-4 mt-3">
+
+                <div className='text-center'>
+
+                    <h5 className="footer-section-heading mb-3">
+                        Get to know us
+                    </h5>
+
+                </div>
+
+                <hr className='mx-5' />
+
+                <div className="d-flex justify-content-center">
+
+                    <div className='col-6 d-flex justify-content-center'>
+
+                        <ul className="footer-section-list">
+
+                            <li className="footer-links footer-section-address">
+
+                                <Link className="" to="/"> Home </Link>
+
+                            </li>
+
+                            <li className="footer-links footer-section-address">
+
+                                <Link className="" to="/about"> About us </Link>
+
+                            </li>
+
+                            <li className="footer-links footer-section-address">
+
+                                <Link className="" to="/trading"> Algo Trading </Link>
+
+                            </li>
+
+                            <li className="footer-links footer-section-address">
+
+                                <Link className="" to="/traning"> Training </Link>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div className='col-6 justify-content-center'>
+
+                        <ul className="footer-section-list">
+
+                            <li className="footer-links footer-section-address">
+
+                                <Link className="" to="/terms&conditions">Terms & Conditions</Link>
+
+                            </li>
+
+                            <li className="footer-links footer-section-address">
+
+                                <Link className="" to="/privacy-policy"> Privacy Policy </Link>
+
+                            </li>
+
+                            <li className="footer-links footer-section-address">
+
+                                <Link className="" to="/refund-policy"> Refund Policy </Link>
+
+                            </li>
+
+                            <li className="footer-links footer-section-address">
+
+                                <Link className="" to="/help"> Help </Link>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div className="col-12 col-md-12 col-lg-4 mt-3">
+
+                <div className='text-center'>
+
+                    <h5 className="footer-section-heading mb-3">
+                        Let Us Help You
+                    </h5>
+
+                </div>
+
+                <hr className='mx-5' />
+
+                <div className='d-flex justify-content-center'>
+
+                    <ul className="footer-section-list">
+
+                        <li className="footer-links footer-section-list-item text-white">
+
+                            <a className='anc-clr' to="" target="_blank">Account</a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div className="container-fluid footer d-flex justify-content-center align-items-center">
+
+
+        <p className='footer-section-copyright px-2 m-0'>&#169;</p>
+
+        <span className="footer-section-copyright">
+            Javelin Traders
+        </span>
+
+    </div>
+
+
+</footer>
+
+
+<footer id="footer bg-info">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <img src="/static/images/JAVLOGO26.png" className="footer-logo" />
+            <div className="d-flex flex-row justify-content-around mt-3">
+              <a to="" target="_blank">
+                <i className="fa fa-whatsapp" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+              </a>
+
+              <a to="" target="_blank">
+                <i className="fa fa-paper-plane" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+              </a>
+
+              <a to="" target="_blank">
+                <i className="fa fa-instagram" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+            <div className="d-flex flex-row justify-content-around mt-3">
+
+              <a to="" target="_blank">
+                <i className="fa fa-linkedin" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+              </a>
+
+              <a to="" target="_blank">
+                <i className="fa fa-facebook-official" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+              </a>
+
+              <a to="" target="_blank">
+                <i className="fa fa-google" style={{ fontSize: "25px" }} aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+            <p className="footer-section-address text-center mt-2">
+              XXX, Hyderabad, Telangana, India.
+            </p>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 footer-links mt-4">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links mt-4">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links mt-4">
+            <h4>Our Social Networks</h4>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <div class="social-links mt-3"> <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a href="#"
+              class="facebook"><i class="bx bxl-facebook"></i></a> <a href="#" class="instagram"><i
+                class="bx bxl-instagram"></i></a> <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> <a
+                  href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div className="container-fluid footer d-flex justify-content-center align-items-center">
+
+
+        <p className='footer-section-copyright px-2 m-0'>&#169;</p>
+
+        <span className="footer-section-copyright">
+          Javelin Traders
+        </span>
+
+      </div>
+    </div>
+
+
+
+  </footer>

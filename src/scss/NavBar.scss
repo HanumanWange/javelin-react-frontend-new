@@ -1,0 +1,90 @@
+.navbar-background{
+    background-color: #fff;
+    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    .whicon{
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background-color: #198754;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 13px;
+        z-index: 9999;
+        i{
+            color: #fff;
+            font-size: 35px;
+        }
+    }
+    .navbar {
+        padding: 0;
+        .logo-image {
+            img{
+                width: 170px;
+            }
+        }
+        .navbar-menu-wrapper{
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                li{
+                    display: inline-block;
+                    padding: 0 18px;
+                    .current{
+                        color: #1f62c7; 
+                    }
+                    a{
+                        font-family: Roboto,sans-serif;
+                        font-weight: 500;
+                        font-size: 16px;
+                        color: #646464;
+                        transition: all .3s;
+    
+                    }
+                    &:hover{
+                        a{
+                           color: #1f62c7; 
+                        }
+                        
+                    }
+                }
+            }
+        }
+        .navbar-nav{
+            .nav-profile{
+                img{
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+.button-bar{
+    outline: none;
+    box-shadow: none !important;
+}
+.dropdown-menu-right{
+    position: absolute !important;
+    right: 0; 
+    background-color: #fff;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    padding: 20px 0;
+    a{
+        color: #777 !important;
+        i{
+            margin-right: 8px;
+            color: #777 !important;
+        }
+    }
+    .mobile-path{
+        li{
+            display: block !important;
+        }
+    }
+}
