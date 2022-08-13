@@ -8,20 +8,23 @@ import "./parts.scss"
 const Sidebar = (props) => {
     const history = useHistory()
 
+    // useEffect(() => {
+    //     let nav_btn = document.getElementById("nav_btn")
+    //     let nav_btn_mb = document.getElementById('nav_btn_mb')
+    //     nav_btn.classList.remove('notshow')
+    //     nav_btn_mb.classList.remove('notshow')
 
-    useEffect(() => {
-        let nav_btn = document.getElementById("nav_btn")
-        let nav_btn_mb = document.getElementById('nav_btn_mb')
-        nav_btn.classList.remove('notshow')
-        nav_btn_mb.classList.remove('notshow')
+    //     // if (props.user.loading === false) {
+    //     //     if (props.user.is_authenticated === false) {
+    //     //         history.push('/login')
+    //     //     }
+    //     // }
 
-        if (props.user.loading === false) {
-            if (props.user.is_authenticated === false) {
-                history.push('/login')
-            }
-        }
+    // }, [props]);
 
-    }, [props]);
+    if (!props.user.loading && !props.user.is_authenticated){
+        history.push('/login')
+    }
 
 
     return (

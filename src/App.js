@@ -34,8 +34,8 @@ const App = () => {
 
   const [state, setState] = useState({
     data:{
-      //url:'http://127.0.0.1:8000',
-      url:'http://api.javelintraders.in',
+    //   url:'http://127.0.0.1:8000',
+      url:'https://api.javelintraders.in',
       // url:'https://trade2.coder-i.com',
       user_data : {},
       is_authenticated:false,
@@ -64,28 +64,18 @@ const App = () => {
         })
         
       }
-
       update_state.loading = false
       setState({data:update_state})
-    
   }
 
   useEffect(() => {
-    
-      
     let mounted = true
         
     if (mounted){
         load_data()
-
-        
-
-
     }
     return () => {
-        
         mounted = false
-
     }
 
 
