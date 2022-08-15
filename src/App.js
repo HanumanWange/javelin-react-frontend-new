@@ -34,7 +34,7 @@ const App = () => {
 
   const [state, setState] = useState({
     data:{
-    //   url:'http://127.0.0.1:8000',
+      // url:'http://127.0.0.1:8000',
       url:'https://api.javelintraders.in',
       // url:'https://trade2.coder-i.com',
       user_data : {},
