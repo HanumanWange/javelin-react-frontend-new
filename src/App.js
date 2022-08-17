@@ -89,8 +89,8 @@ const App = () => {
 
           <Navbar user={state.data}/>
           
-          <div className=" page-body-wrapper">
-            <ColourTheme />
+          <div >
+            
 
             <Switch>
             {/* Home Path  */}

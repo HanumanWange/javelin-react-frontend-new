@@ -1,44 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DashboardFooter from '../../parts/DashboardFooter';
 import Sidebar from '../../parts/Sidebar';
 import AlgoInner from '../Website/parts/AlgoInner';
 import './account.scss'
 
 const AllSubscription = (props) => {
+  const [show, setShow] = useState(false)
   return (
     <>
-
-      <div className='bord-design'>
-        <div className='container-fluid'>
-          <div className='row'>
-            <div className='col-lg-3'>
-              <Sidebar user={props.user} />
+     <div className=" page-body-wrapper-one">
+      {/* <Sidebar user={props.user}/> */}
+    
+      <div className='d-lg-block d-none'>
+                <Sidebar user={props.user} />
             </div>
-            <div className='col-lg-9'>
-              <div className="main-panel">
+             
+
+            <div className='bariconaccout d-lg-none'>
+                <i onClick={() => setShow(!show)} className='fa fa-bars' ></i>
+            </div>
+
+             <div >
+                 {
+                     show &&  <div className='menubaraccount'>
+                         <div className='iconshowde'>
+                            <i onClick={() => setShow(!show)} className='fa fa-close' ></i>
+                         </div>
+                     
+                     <Sidebar user={props.user} />
+                  </div>
+                 }
+               
+             </div>
+
+
+            <div className="main-panel">
 
                 <div className="content-wrapper">
 
-                  <AlgoInner user={props.user} />
+                <AlgoInner user={props.user}/>
 
                 </div>
 
-
-              </div>
+                <DashboardFooter />
             </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-      <DashboardFooter />
-
-
-
+ </div>
+   
     </>
   )
 }

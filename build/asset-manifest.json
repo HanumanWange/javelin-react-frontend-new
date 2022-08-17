@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.86567f6a.css",
+    "main.js": "/static/js/main.d98e3bbb.js",
+    "static/js/787.87feee4b.chunk.js": "/static/js/787.87feee4b.chunk.js",
+    "static/media/t3.png": "/static/media/t3.95787550c59a015b9d9d.png",
+    "static/media/img1.jpg": "/static/media/img1.25ff55a4863a44d77df9.jpg",
+    "static/media/img3.jpg": "/static/media/img3.b546de60f07b969f2f7b.jpg",
+    "static/media/login-one.png": "/static/media/login-one.7c27adf23ccfa9755fa5.png",
+    "static/media/t1.png": "/static/media/t1.0a4da9b667347f6f4432.png",
+    "static/media/img2.jpg": "/static/media/img2.db705ff249616fc24699.jpg",
+    "static/media/Banner-img.png": "/static/media/Banner-img.7931ed0e57b6136026ff.png",
+    "static/media/t2.png": "/static/media/t2.c8986c748f6809c326b8.png",
+    "static/media/login-two.png": "/static/media/login-two.835a5eb796eaa7603d5a.png",
+    "static/media/Primg.jpg": "/static/media/Primg.3c3c60f37e0dbdcc6236.jpg",
+    "static/media/about-img.png": "/static/media/about-img.66f88a60f8a08380e9a8.png",
+    "static/media/profile.png": "/static/media/profile.5faf09a7795d28bf5a2b.png",
+    "index.html": "/index.html",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.86567f6a.css.map": "/static/css/main.86567f6a.css.map",
+    "main.d98e3bbb.js.map": "/static/js/main.d98e3bbb.js.map",
+    "787.87feee4b.chunk.js.map": "/static/js/787.87feee4b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86567f6a.css",
+    "static/js/main.d98e3bbb.js"
+  ]
+}

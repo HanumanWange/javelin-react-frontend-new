@@ -113,179 +113,159 @@ const AliceForm = (props) => {
             mounted = false
 
         }
-
+ 
 
 
     }, [])
-
+    const [show, setShow] = useState(false)
 
     return (
         <>
-            <ToastContainer />
+        <ToastContainer />
+        <div className=" page-body-wrapper-one">
+        <div className='d-lg-block d-none'>
+                <Sidebar user={props.user} />
+            </div>
+             
 
-            <div className='bord-design'>
-                <div className='container-fluid'>
-                    <div className='row'>
-                        <div className='col-lg-3'>
-                            <Sidebar user={props.user} />
-                        </div>
-                        <div className='col-lg-9'>
-                            <div className="main-panel">
+            <div className='bariconaccout d-lg-none'>
+                <i onClick={() => setShow(!show)} className='fa fa-bars' ></i>
+            </div>
 
-                                <div className="content-wrapper">
-                                    <div className="row">
-                                       
-                                            <div className="card">
-                                                <div className="card-body">
+             <div >
+                 {
+                     show &&  <div className='menubaraccount'>
+                         <div className='iconshowde'>
+                            <i onClick={() => setShow(!show)} className='fa fa-close' ></i>
+                         </div>
+                     
+                     <Sidebar user={props.user} />
+                  </div>
+                 }
+               
+             </div>
 
+            <div className="main-panel">
 
-                                                    {state.data && !loading ?
-                                                        <>
-                                                            <div className="row px-2 d-flex justify-content-between align-items-center">
-                                                                <h4 className="card-title mb-4">Alice Credential Form</h4>
-                                                                {state.data.is_valid ?
-                                                                    <button type="submit" onClick={check_form}
-                                                                        className="btn btn-success mr-2">Check</button>
-                                                                    :
-                                                                    ''
-                                                                }
-                                                            </div>
-
-
-                                                            <div className="forms-sample row">
-                                                                <div className="form-group col-md-6">
-                                                                    <label for="exampleInputUsername1">Username</label>
+                <div className="content-wrapper">
+                    <div className="row">
+                        <div className="col-md-12 grid-margin stretch-card stretch-card border shadow-sm rounded">
+                            <div className="card">
+                                <div className="card-body">
 
 
-                                                                    <div className="input-group">
-                                                                        <input type="password" className="form-control"
-                                                                            value={state.data.user_name}
-                                                                            name="user_name"
-                                                                            id="username"
-                                                                            onChange={(e) => onchange_fun(e)}
-                                                                            placeholder="Username" />
-                                                                        <div className="input-group-prepend">
-                                                                            <button
-                                                                                onClick={() => show_pass('username')}
-                                                                                className="input-group-text ">
-                                                                                <i className="fa fa-eye" aria-hidden="true"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-
-
-
-
-                                                                </div>
-
-
-
-                                                                <div className="form-group col-md-6">
-                                                                    <label for="exampleInputEmail1">Password</label>
-                                                                    <div className="input-group">
-                                                                        <input type="password" className="form-control"
-                                                                            value={state.data.password}
-                                                                            name="password"
-                                                                            onChange={(e) => onchange_fun(e)}
-                                                                            id="password" />
-                                                                        <div className="input-group-prepend">
-                                                                            <button
-                                                                                onClick={() => show_pass('password')}
-                                                                                className="input-group-text ">
-                                                                                <i className="fa fa-eye" aria-hidden="true"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className="form-group col-md-6">
-                                                                    <label for="exampleInputConfirmPassword1">Two Fa</label>
-
-                                                                    <div className="input-group">
-                                                                        <input type="password"
-                                                                            value={state.data.two_fa}
-                                                                            className="form-control"
-                                                                            name="two_fa"
-                                                                            id="twoFa"
-                                                                            onChange={(e) => onchange_fun(e)} />
-                                                                        <div className="input-group-prepend">
-                                                                            <button
-                                                                                onClick={() => show_pass('twoFa')}
-                                                                                className="input-group-text ">
-                                                                                <i className="fa fa-eye" aria-hidden="true"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-
-                                                                <div className="form-group col-md-6">
-                                                                    <label for="exampleInputPassword1">Client Id</label>
-                                                                    <div className="input-group">
-                                                                        <input type="password" className="form-control"
-                                                                            value={state.data.client_id}
-                                                                            name="client_id"
-                                                                            onChange={(e) => onchange_fun(e)}
-                                                                            id="client_id" />
-                                                                        <div className="input-group-prepend">
-                                                                            <button
-                                                                                onClick={() => show_pass('client_id')}
-                                                                                className="input-group-text ">
-                                                                                <i className="fa fa-eye" aria-hidden="true"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-
-
-
-                                                                <div className="form-group col-md-6">
-                                                                    <label for="exampleInputUsername1">Secrect Key</label>
-                                                                    <div className="input-group">
-                                                                        <input type="password" className="form-control"
-                                                                            value={state.data.secrect_key}
-                                                                            name="secrect_key"
-                                                                            onChange={(e) => onchange_fun(e)}
-                                                                            id="secrect_key" />
-                                                                        <div className="input-group-prepend">
-                                                                            <button
-                                                                                onClick={() => show_pass('secrect_key')}
-                                                                                className="input-group-text ">
-                                                                                <i className="fa fa-eye" aria-hidden="true"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-
-
-
-                                                                <div className="col-md-12">
-                                                                    <button type="submit" onClick={alice_submit_form} className="btn btn buttondesign">Submit</button>
-                                                                </div>
-
-
-                                                            </div>
-                                                        </>
-                                                        :
-                                                        <Spinner />
-                                                    }
-                                                </div>
+                                    {state.data && !loading ?
+                                        <>
+                                            <div className="row px-2 d-flex justify-content-between align-items-center">
+                                                <h4 className="card-title">Alice Credential Form</h4>
+                                                {state.data.is_valid ?
+                                                    <button type="submit" onClick={check_form} className="btn btn-success mr-2">Check</button>
+                                                    :
+                                                    ''
+                                                }
                                             </div>
-                                        
-                                    </div>
 
+
+                                            <div className="forms-sample row">
+                                                <div className="form-group col-md-6">
+                                                    <label for="exampleInputUsername1">Username</label>
+                                                    <input type="text" className="form-control"
+                                                        value={state.data.user_name}
+                                                        name="user_name"
+                                                        onChange={(e)=>onchange_fun(e)}
+                                                        id="exampleInputUsername1" placeholder="Username" />
+                                                </div>
+
+
+
+                                                <div className="form-group col-md-6">
+                                                    <label for="exampleInputEmail1">Password</label>
+                                                    <div className="input-group">
+                                                        <input type="password" className="form-control"
+                                                            value={state.data.password}
+                                                            name="password"
+                                                            onChange={(e)=>onchange_fun(e)}
+                                                            id="password" />
+                                                        <div className="input-group-prepend">
+                                                            <button
+                                                                onClick={() => show_pass('password')}
+                                                                className="input-group-text bg-primary text-white">
+                                                                <i className="fa fa-eye" aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="form-group col-md-6">
+                                                    <label for="exampleInputPassword1">Client Id</label>
+                                                    <div className="input-group">
+                                                        <input type="password" className="form-control"
+                                                            value={state.data.client_id}
+                                                            name="client_id"
+                                                            onChange={(e)=>onchange_fun(e)}
+                                                            id="client_id" />
+                                                        <div className="input-group-prepend">
+                                                            <button
+                                                                onClick={() => show_pass('client_id')}
+                                                                className="input-group-text bg-primary text-white">
+                                                                <i className="fa fa-eye" aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div className="form-group col-md-6">
+                                                    <label for="exampleInputConfirmPassword1">Two Fa</label>
+                                                    <input type="text"
+                                                        value={state.data.two_fa}
+                                                        className="form-control" 
+                                                        name="two_fa"
+                                                        onChange={(e)=>onchange_fun(e)} />
+                                                </div>
+
+                                                <div className="form-group col-md-6">
+                                                    <label for="exampleInputUsername1">Secrect Key</label>
+                                                    <div className="input-group">
+                                                        <input type="password" className="form-control"
+                                                            value={state.data.secrect_key}
+                                                            name="secrect_key"
+                                                            onChange={(e)=>onchange_fun(e)}
+                                                            id="secrect_key" />
+                                                        <div className="input-group-prepend">
+                                                            <button
+                                                                onClick={() => show_pass('secrect_key')}
+                                                                className="input-group-text bg-primary text-white">
+                                                                <i className="fa fa-eye" aria-hidden="true"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                               
+
+
+                                                    <div className="col-md-12">
+                                                        <button type="submit" onClick={alice_submit_form} className="btn btn-primary mr-2">Submit</button>
+                                                    </div>
+
+                                                    
+                                            </div>
+                                        </>
+                                        :
+                                        <i className="fa-li fa fa-spinner fa-spin"></i>
+                                    }
                                 </div>
-
-                               
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <DashboardFooter />
 
+                </div>
+
+                <DashboardFooter />
+            </div>
+        
+        </div>
 
 
 

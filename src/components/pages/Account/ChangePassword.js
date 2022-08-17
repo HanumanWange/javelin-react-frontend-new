@@ -130,126 +130,141 @@ const ChangePassword = (props) => {
     }
 
 
+    const [show, setShow] = useState(false)
+
     return (
         <>
             <ToastContainer />
 
-
-            <div className='bord-design'>
-                <div className='container-fluid'>
-                    <div className='row' >
-                        <div className='col-lg-3'>
-                            <Sidebar user={props.user} />
-                        </div>
-                        <div className='col-lg-9'>
-                            <div className="main-panel">
-
-                                <div className="content-wrapper">
-                                    <div>
-                                        <div >
-                                            <div className="card">
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Change Password</h4>
-
-                                                    <div className="forms-sample col-md-6">
-                                                        <div className="form-group">
-                                                            <label>Old Password</label>
-                                                            <div className="input-group">
-                                                                <input type="password" name='old_password'
-                                                                    onChange={(e) => on_change_fun(e)}
-                                                                    id='old_password'
-                                                                    value={oldPass.val}
-                                                                    className="form-control" placeholder="Enter Your Password" />
-                                                                <div className="input-group-prepend">
-                                                                    <button
-                                                                        onClick={() => show_pass('old_password')}
-                                                                        className="input-group-text ">
-                                                                        <i className="fa fa-eye" aria-hidden="true"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                            {oldPass.error_list.map((i, id) => (
-                                                                <label className=' mt-2 text-danger' for="exampleInputEmail3">
-                                                                    {i}
-                                                                </label>
-
-                                                            ))}
-
-                                                        </div>
-
-                                                        <div className="form-group">
-                                                            <label>New Password</label>
-                                                            <div className="input-group">
-                                                                <input type="password" className="form-control"
-                                                                    name='new_password'
-                                                                    id='new_password'
-                                                                    value={newPass.val}
-                                                                    onChange={(e) => on_change_fun(e)}
-                                                                    placeholder="Enter Your New Password" />
-                                                                <div className="input-group-prepend">
-                                                                    <button
-                                                                        onClick={() => show_pass('new_password')}
-                                                                        className="input-group-text"><i className="fa fa-eye" aria-hidden="true"></i></button>
-                                                                </div>
-                                                            </div>
-                                                            {newPass.error_list.map((i, id) => (
-                                                                <p className='mt-1'>
-                                                                    <label className='text-danger' for="exampleInputEmail3">
-                                                                        {i}
-                                                                    </label>
-                                                                </p>
-
-                                                            ))}
-
-                                                        </div>
-
-                                                        <div className="form-group">
-                                                            <label>Confirm Password</label>
-                                                            <div className="input-group">
-                                                                <input type="password" className="form-control"
-                                                                    name='new2_password'
-                                                                    id='new2_password'
-                                                                    value={new2Pass.val}
-                                                                    onChange={(e) => on_change_fun(e)}
-                                                                    placeholder="Confirm Your Password" />
-                                                                <div className="input-group-prepend">
-                                                                    <button
-                                                                        onClick={() => show_pass('new2_password')}
-                                                                        className="input-group-text "><i className="fa fa-eye" aria-hidden="true"></i></button>
-                                                                </div>
-                                                            </div>
-                                                            {new2Pass.error_list.map((i, id) => (
-                                                                <label className=' mt-2 text-danger' for="exampleInputEmail3">
-                                                                    {i}
-                                                                </label>
-
-                                                            ))}
-                                                        </div>
+            <div className=" page-body-wrapper-one">
 
 
-                                                        <button type="button"
-                                                            onClick={submit_forgot_form}
-                                                            className="btn btn-primary mr-2">Submit</button>
+            
 
-                                                    </div>
+            <div className='d-lg-block d-none'>
+                <Sidebar user={props.user} />
+            </div>
+             
+
+            <div className='bariconaccout d-lg-none'>
+                <i onClick={() => setShow(!show)} className='fa fa-bars' ></i>
+            </div>
+
+             <div >
+                 {
+                     show &&  <div className='menubaraccount'>
+                         <div className='iconshowde'>
+                            <i onClick={() => setShow(!show)} className='fa fa-close' ></i>
+                         </div>
+                     
+                     <Sidebar user={props.user} />
+                  </div>
+                 }
+               
+             </div>
+
+            <div className="main-panel">
+
+                <div className="content-wrapper">
+                    <div className="row">
+                        <div className="col-12 grid-margin stretch-card rounded shadow-sm border">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h4 className="card-title">Change Password</h4>
+
+                                    <div className="forms-sample">
+                                        <div className="form-group">
+                                            <label>Old Password</label>
+                                            <div className="input-group">
+                                                <input type="password" name='old_password'
+                                                    onChange={(e) => on_change_fun(e)}
+                                                    id='old_password'
+                                                    value={oldPass.val}
+                                                    className="form-control" placeholder="Enter Your Password" />
+                                                <div className="input-group-prepend">
+                                                    <button
+                                                        onClick={() => show_pass('old_password')}
+                                                        className="input-group-text bg-primary text-white">
+                                                        <i className="fa fa-eye" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
+                                            {oldPass.error_list.map((i, id) => (
+                                                <label className=' mt-2 text-danger' for="exampleInputEmail3">
+                                                    {i}
+                                                </label>
+
+                                            ))}
+
                                         </div>
+
+                                        <div className="form-group">
+                                            <label>New Password</label>
+                                            <div className="input-group">
+                                                <input type="password" className="form-control"
+                                                    name='new_password'
+                                                    id='new_password'
+                                                    value={newPass.val}
+                                                    onChange={(e) => on_change_fun(e)}
+                                                    placeholder="Enter Your New Password" />
+                                                <div className="input-group-prepend">
+                                                    <button
+                                                        onClick={() => show_pass('new_password')}
+                                                        className="input-group-text bg-primary text-white"><i className="fa fa-eye" aria-hidden="true"></i></button>
+                                                </div>
+                                            </div>
+                                            {newPass.error_list.map((i, id) => (
+                                                <p className='mt-1'>
+                                                    <label className='text-danger' for="exampleInputEmail3">
+                                                        {i}
+                                                    </label>
+                                                </p>
+
+                                            ))}
+
+                                        </div>
+
+                                        <div className="form-group">
+                                            <label>Confirm Password</label>
+                                            <div className="input-group">
+                                                <input type="password" className="form-control"
+                                                    name='new2_password'
+                                                    id='new2_password'
+                                                    value={new2Pass.val}
+                                                    onChange={(e) => on_change_fun(e)}
+                                                    placeholder="Confirm Your Password" />
+                                                <div className="input-group-prepend">
+                                                    <button
+                                                        onClick={() => show_pass('new2_password')}
+                                                        className="input-group-text bg-primary text-white"><i className="fa fa-eye" aria-hidden="true"></i></button>
+                                                </div>
+                                            </div>
+                                            {new2Pass.error_list.map((i, id) => (
+                                                <label className=' mt-2 text-danger' for="exampleInputEmail3">
+                                                    {i}
+                                                </label>
+
+                                            ))}
+                                        </div>
+
+
+                                        <button type="button" 
+                                        onClick={submit_forgot_form}
+                                        className="btn btn-primary mr-2">Submit</button>
+
                                     </div>
-
-
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>
+
+
                 </div>
+
+                <DashboardFooter />
+
             </div>
-
-            <DashboardFooter />
-
+                                                </div>
 
         </>
     )

@@ -65,7 +65,7 @@ const AccountUpdate = (props) => {
         return () => (mounted = false);
     }, []);
 
-
+    const [show, setShow] = useState(false)
 
 
 
@@ -75,81 +75,93 @@ const AccountUpdate = (props) => {
         <>
             <ToastContainer />
 
-            <div className='bord-design'>
-                <div className='container-fluid'>
-                    <div className='row'>
-                        <div className='col-lg-3'>
-                            <Sidebar user={props.user} />
-                        </div>
-                        <div className='col-lg-9'>
-                            <div className="main-panel">
+            <div className=" page-body-wrapper-one">
 
-                                <div className="content-wrapper">
-                                   
-                                       
-                                            <div className="card">
-                                                <div className="card-body">
-                                                    <h4 className="card-title">Update Your Profile</h4>
+              <div className='d-lg-block d-none'>
+                <Sidebar user={props.user} />
+            </div>
+             
 
-                                                    {state.data ?
+            <div className='bariconaccout d-lg-none'>
+                <i onClick={() => setShow(!show)} className='fa fa-bars' ></i>
+            </div>
 
-                                                        <div className="forms-sample row">
-                                                            <div className="form-group col-md-6">
-                                                                <label for="exampleInputName1">First Name</label>
-                                                                <input type="text" name='first_name' value={state.data.first_name}
-                                                                    onChange={(e) => on_change_fun(e)}
-                                                                    className="form-control" id="exampleInputName1" placeholder="Name" />
-                                                            </div>
-                                                            <div className="form-group col-md-6">
-                                                                <label for="exampleInputName1">Last Name</label>
-                                                                <input type="text" name='last_name' value={state.data.last_name}
-                                                                    onChange={(e) => on_change_fun(e)}
-                                                                    className="form-control" id="exampleInputName1" placeholder="Name" />
-                                                            </div>
-                                                            <div className="form-group col-md-6">
-                                                                <label for="exampleInputEmail3">Email address</label>
-                                                                <input type="email" name='email' value={state.data.email}
-                                                                    onChange={(e) => on_change_fun(e)}
-                                                                    className="form-control" id="exampleInputEmail3" placeholder="Email" />
-                                                            </div>
-                                                            <div className="form-group col-md-6">
-                                                                <label for="exampleInputName1">Contact No</label>
-                                                                <input type="text" name='phone' value={state.data.phone}
-                                                                    onChange={(e) => on_change_fun(e)}
-                                                                    className="form-control" id="exampleInputName1" placeholder="Name" />
-                                                            </div>
+             <div >
+                 {
+                     show &&  <div className='menubaraccount'>
+                         <div className='iconshowde'>
+                            <i onClick={() => setShow(!show)} className='fa fa-close' ></i>
+                         </div>
+                     
+                     <Sidebar user={props.user} />
+                  </div>
+                 }
+               
+             </div>
 
+            <div className="main-panel">
 
-                                                            <div className='col-md-12'>
-                                                                <button type="submit" onClick={submit_profile} className="btn btn-primary mr-2">Submit</button>
+                <div className="content-wrapper">
+                    <div className="row">
+                        <div className="col-12 grid-margin stretch-card border shadow-sm rounded">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h4 className="card-title">Update Your Profile</h4>
 
-                                                            </div>
+                                    {state.data ?
 
-
-
-                                                        </div>
-                                                        :
-                                                        "Loading......."
-                                                    }
-
-                                                </div>
+                                        <div className="forms-sample row">
+                                            <div className="form-group col-md-6">
+                                                <label for="exampleInputName1">First Name</label>
+                                                <input type="text" name='first_name' value={state.data.first_name}
+                                                    onChange={(e) => on_change_fun(e)}
+                                                    className="form-control" id="exampleInputName1" placeholder="Name" />
                                             </div>
-                                       
-                                 
+                                            <div className="form-group col-md-6">
+                                                <label for="exampleInputName1">Last Name</label>
+                                                <input type="text" name='last_name' value={state.data.last_name}
+                                                    onChange={(e) => on_change_fun(e)}
+                                                    className="form-control" id="exampleInputName1" placeholder="Name" />
+                                            </div>
+                                            <div className="form-group col-md-6">
+                                                <label for="exampleInputEmail3">Email address</label>
+                                                <input type="email" name='email' value={state.data.email}
+                                                    onChange={(e) => on_change_fun(e)}
+                                                    className="form-control" id="exampleInputEmail3" placeholder="Email" />
+                                            </div>
+                                            <div className="form-group col-md-6">
+                                                <label for="exampleInputName1">Contact No</label>
+                                                <input type="text" name='phone' value={state.data.phone}
+                                                    onChange={(e) => on_change_fun(e)}
+                                                    className="form-control" id="exampleInputName1" placeholder="Name" />
+                                            </div>
 
+
+                                            <div className='col-md-12'>
+                                                <button type="submit" onClick={submit_profile} className="btn btn-primary mr-2">Submit</button>
+
+                                            </div>
+
+
+
+                                        </div>
+                                        :
+                                        "Loading......."
+                                    }
 
                                 </div>
-
-                               
-
                             </div>
                         </div>
                     </div>
+
+
                 </div>
+
+                <DashboardFooter />
+
             </div>
-            <DashboardFooter />
 
-
+         </div>
 
 
         </>
