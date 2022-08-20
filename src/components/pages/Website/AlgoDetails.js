@@ -15,12 +15,12 @@ const AlgoDetails = ({ user }) => {
   })
 
   const [subs, setSubs] = useState({
-    data:null
+    data: null
   })
 
-  function on_change_fun(e){
+  function on_change_fun(e) {
     let algo_id = e.target.value
-    setSubs({data:state.data.algos[algo_id]})
+    setSubs({ data: state.data.algos[algo_id] })
   }
 
   async function load_data() {
@@ -28,8 +28,8 @@ const AlgoDetails = ({ user }) => {
       console.log("RESP DTL------>>>", resp)
       if (resp.response == true) {
         setState({ data: resp.bknd_data })
-        if (resp.bknd_data.algos.length != 0){
-          setSubs({data:resp.bknd_data.algos[0]})
+        if (resp.bknd_data.algos.length != 0) {
+          setSubs({ data: resp.bknd_data.algos[0] })
         }
       }
       else {
@@ -85,7 +85,112 @@ const AlgoDetails = ({ user }) => {
     <>
       <ToastContainer />
 
-      <div className="container-fluid p-0">
+
+      <div className='AlgoDetails'>
+        <div className='container'>
+
+          {state.data == null ?
+            'Loading.......'
+            :
+
+            <div className="123">
+
+              <div className='heading'>
+                <h2 className='about-heading text-center'>{state.data.name}</h2>
+                <div className='line-bar mx-auto' ></div>
+              </div>
+
+              <div className='algodetails-contact' >
+                <div className='row'>
+                  <div className='col-lg-6'>
+                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+
+                      <div className="carousel-inner">
+
+                        <div className="carousel-item active">
+                          <img className="d-block algo-crousel w-100" src="/static/images/aimg-1.png" alt="First slide" />
+                        </div>
+
+                        <div className="carousel-item">
+                          <img className="d-block algo-crousel w-100" src="/static/images/aimg-2.png" alt="Second slide" />
+                        </div>
+
+                        <div className="carousel-item">
+                          <img className="d-block algo-crousel w-100" src="/static/images/aimg-3.png" alt="Third slide" />
+                        </div>
+
+                      </div>
+
+                      <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Previous</span>
+                      </a>
+
+                      <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Next</span>
+                      </a>
+
+                    </div>
+                  </div>
+                  <div className='col-lg-6'>
+
+                    <div className='algotextline'  >
+
+                      <h2 className='text-info'>About Strategy</h2>
+
+                      <p className='body-font mt-3'>
+                        {state.data.desc}
+                      </p>
+
+                      <label className='test-dark'><b>Subscriptions</b></label>
+
+                      <select className="form-control" name="algo" onChange={(e) => on_change_fun(e)}>
+                        {state.data.algos.map((i, id) => (
+                          <option className="text-capitalize" value={id} key={id}>
+                            {i.time_period} {i.time_type} / ₹{i.amount}
+                          </option>
+                        ))}
+
+
+                      </select>
+
+                      {user.is_authenticated ?
+                        <>
+                          <button className="btn buttondesign"
+                            data-toggle="modal" data-target="#exampleModal">
+                            Subscribe
+                          </button>
+
+                          <Link className="btn buttondesign" to="/account/trade/start">
+                            Go to Strategy
+                          </Link>
+                        </>
+                        :
+                        <a className="btn buttondesign" href="#" target="_blank">
+                          Past Results
+                        </a>
+                      }
+                      <a className="btn buttondesign" href="#" target="_blank">
+                        View Excel File
+                      </a>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          }
+
+
+
+        </div>
+      </div>
+
+
+      {/* <div className="container-fluid p-0">
         <div className="content-wrapper d-flex align-items-center justify-content-center">
           {state.data == null ?
             'Loading.......'
@@ -143,7 +248,7 @@ const AlgoDetails = ({ user }) => {
 
                   <label className='test-dark'><b>Subscriptions</b></label>
 
-                  <select className="form-control" name="algo" onChange={(e)=>on_change_fun(e)}>
+                  <select className="form-control" name="algo" onChange={(e) => on_change_fun(e)}>
                     {state.data.algos.map((i, id) => (
                       <option className="text-capitalize" value={id} key={id}>
                         {i.time_period} {i.time_type} / ₹{i.amount}
@@ -187,38 +292,38 @@ const AlgoDetails = ({ user }) => {
 
 
         </div>
-        {subs.data?
-        
+        {subs.data ?
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Subscription Form</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-               <p>
-               Are you sure want to subscription! {subs.data.id}
-              </p> 
-              <p> ₹ {subs.data.amount} for {subs.data.time_period} {subs.data.time_type}</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary"
-                onClick={()=>submit_subscription(subs.data.id)}
-                >Submit</button>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Subscription Form</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Are you sure want to subscription! {subs.data.id}
+                  </p>
+                  <p> ₹ {subs.data.amount} for {subs.data.time_period} {subs.data.time_type}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary"
+                    onClick={() => submit_subscription(subs.data.id)}
+                  >Submit</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        :''}
+          : ''}
 
         <Footer />
-      </div>
+      </div> */}
 
-
+      <Footer/>
 
     </>
   )

@@ -156,7 +156,7 @@ const AlgoInner = ({ user }) => {
 
 
 
-                                            <Link to={"/trading/"}
+                                            <Link to={"/trading/2"}
                                                 className="btn button mt-2">Know
                                                 More</Link>
                                         </div>

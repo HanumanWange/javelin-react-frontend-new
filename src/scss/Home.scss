@@ -591,19 +591,51 @@
 }
 
 
+.AlgoDetails {
+    padding: 70px 0 0;
+    @media only screen and (max-width:991px){
+        padding: 40px 0 0;
+    }
+   .line-bar{
+       margin-bottom: 15px;
+   }
+    .algodetails-contact {
+        .algotextline {
+            padding-left: 60px;
+            @media only screen and (max-width:991px){
+                padding-top: 50px;
+                padding-left: 0px;
+            }
+            .text-info {
+                font-size: 28px;
+                line-height: 36px;
+                color: #1f62c7 !important;
+                letter-spacing: 2px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                cursor: pointer;
 
+            }
 
+            .test-dark {
+                margin-bottom: 8px;
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
+    }
+    .buttondesign{
+        margin-top: 20px;
+    background-color: #1f62c7;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 6px 22px;
+    margin-right: 20px;
+    &:hover{
+        background-color: #1f54a3;
+    }
+    }
+}
 
 .allpolicydesign {
     padding: 70px 0 40px;
@@ -620,7 +652,7 @@
     .text-demo {
         padding: 50px 0;
 
-        p  {
+        p {
             color: #424242ad;
             font-size: 16px;
             font-family: roboto;
@@ -635,16 +667,18 @@
                 }
             }
         }
-        h5{
+
+        h5 {
             font-size: 18px;
-    line-height: 36px;
-    color: #1f62c7;
-    font-weight: 600;
-    margin-bottom: 15px;
-    cursor: pointer;
-    text-transform: uppercase;
+            line-height: 36px;
+            color: #1f62c7;
+            font-weight: 600;
+            margin-bottom: 15px;
+            cursor: pointer;
+            text-transform: uppercase;
         }
-        li{
+
+        li {
             color: #424242ad;
             font-size: 16px;
             font-family: roboto;

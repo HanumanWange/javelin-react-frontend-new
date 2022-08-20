@@ -40,7 +40,7 @@ const Navbar = (props) => {
         <>
             <div className='navbar-background' >
                 <div className='container'>
-                    <div className='whicon'><Link to="/login" className="nav-link" ><i className="fa fa-whatsapp" aria-hidden="true" ></i></Link></div>
+                    <div className='whicon'><a href="https://wa.me/8333952020"   className="nav-link" ><i className="fa fa-whatsapp" aria-hidden="true" ></i></a></div>
                     <nav className="navbar ">
                         <div className='d-flex justify-content-between w-100'>
                             <div className="text-center logo-image  ">
