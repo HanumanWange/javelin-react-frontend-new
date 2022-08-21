@@ -169,7 +169,7 @@ const ChangePassword = (props) => {
                     <div className="row">
                         <div className="col-12 grid-margin stretch-card rounded shadow-sm border">
                             <div className="card">
-                                <div className="card-body">
+                                <div className="card-body col-md-7">
                                     <h4 className="card-title">Change Password</h4>
 
                                     <div className="forms-sample">

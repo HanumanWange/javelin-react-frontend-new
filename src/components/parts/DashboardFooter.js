@@ -15,12 +15,12 @@ const DashboardFooter = () => {
                     <div className='pt-2 col-12 col-md-12 col-lg-5 d-flex align-items-center db-footer'>
                         <ul className='d-flex align-items-center'>
 
-                            <li className='px-2 db-footer-list'>
-                                <Link href="/">Home</Link>
+                            <li className='px-2 db-footer-list '>
+                                <Link className="nav-link" href="/">Home</Link>
                             </li>
 
                             <li className='px-2 db-footer-list'>
-                                <Link href="/about">About</Link>
+                                <Link href="/about"  className="nav-link">About</Link>
                             </li>
 
                             <li className='px-2 db-footer-list'>
@@ -44,7 +44,7 @@ const DashboardFooter = () => {
 
                     </div>
 
-                    <div className='col-12 col-md-12 col-lg-4 d-flex align-items-center pr-5 pt-2 db-footer-icon'>
+                    {/* <div className='col-12 col-md-12 col-lg-4 d-flex align-items-center pr-5 pt-2 db-footer-icon'>
 
                         <ul className='d-flex align-items-center'>
 
@@ -69,7 +69,7 @@ const DashboardFooter = () => {
 
                         </ul>
 
-                    </div>
+                    </div> */}
 
                     </div>
 

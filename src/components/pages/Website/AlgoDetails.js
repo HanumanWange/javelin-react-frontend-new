@@ -313,7 +313,7 @@ const AlgoDetails = ({ user }) => {
                   <p> ₹ {subs.data.amount} for {subs.data.time_period} {subs.data.time_type}</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary"
+                  <button data-dismiss="modal" aria-label="Close" type="button" class="btn btn-primary close"
                     onClick={() => submit_subscription(subs.data.id)}
                   >Submit</button>
                 </div>

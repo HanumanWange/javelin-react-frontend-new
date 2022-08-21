@@ -73,7 +73,7 @@ const Training = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            <a className="btn button-design" href="#">
+                                            <a className="btn button-design" href="https://wa.me/8333952020">
                                                 Contact
                                             </a>
                                         </div>
@@ -141,7 +141,7 @@ const Training = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            <a className="btn button-design" href="#">
+                                            <a className="btn button-design" href="https://wa.me/8333952020">
                                                 Contact
                                             </a>
                                         </div>
@@ -215,7 +215,7 @@ const Training = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            <a className="btn button-design" href="#">
+                                            <a className="btn button-design" href="https://wa.me/8333952020">
                                                 Contact
                                             </a>
                                         </div>

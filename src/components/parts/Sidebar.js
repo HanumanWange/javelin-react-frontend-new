@@ -44,19 +44,19 @@ const Sidebar = (props) => {
                             <span className="menu-title">Trading Accounts</span>
                             <i className="menu-arrow"></i>
                         </a>
-                        <div className="collapse" id="ui-basic">
-                            <ul className="nav flex-column sub-menu">
+                            {/* <div className="collapse" id="ui-basic">
+                                <ul className="nav flex-column sub-menu">
 
-                                <li className="nav-item">
-                                    <Link to="/account/alice-form" className="nav-link">Alice</Link>
-                                </li>
+                                    <li className="nav-item">
+                                        <Link to="/account/alice-form" className="nav-link">Alice</Link>
+                                    </li>
 
-                                <li className="nav-item">
-                                    <Link to="/account/zerodha-form" className="nav-link" >Zerodha </Link>
-                                </li>
+                                    <li className="nav-item">
+                                        <Link to="/account/zerodha-form" className="nav-link" >Zerodha </Link>
+                                    </li>
 
-                            </ul>
-                        </div>
+                                </ul>
+                            </div> */}
                     </li>
 
                     <li className="nav-item">

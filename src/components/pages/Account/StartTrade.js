@@ -248,7 +248,7 @@ const StartTrade = (props) => {
 
 
                                                                     <h1 className="text-primary">#{algo.data.subscription_id}</h1>
-                                                                    <h3 className="font-weight-500 mb-xl-4 text-primary">India</h3>
+                                                                    <h3 className="font-weight-500 mb-xl-4 text-primary">PNL</h3>
                                                                     <p className="mb-2 mb-xl-0">
 
                                                                     </p>

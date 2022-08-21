@@ -11,7 +11,7 @@ const Footer = () => {
                         <div className='col-lg-5 col-12'>
                             <div className='d-lg-block d-flex  justify-content-center flex-column w-100 mb-0'>
                                   <img src="/static/images/JAVLOGO26.png" className="footer-logo mx-lg-left mx-auto " />
-                                    <div className='icon-design mx-lg-left mx-auto ' >
+                                    {/* <div className='icon-design mx-lg-left mx-auto ' >
                                         <div>
                                             <a herf="" >
                                                 <i className=' fa fa-facebook-f' ></i>
@@ -33,7 +33,7 @@ const Footer = () => {
                                             </a>
                                         </div>
 
-                                    </div>
+                                    </div> */}
                             </div>
                           
 
@@ -76,7 +76,7 @@ const Footer = () => {
 
                                         </li>
 
-                                        <li className="footer-links footer-section-address">
+                                        {/* <li className="footer-links footer-section-address">
 
                                             <Link className="" to="/privacy-policy"> Privacy Policy </Link>
 
@@ -92,7 +92,7 @@ const Footer = () => {
 
                                             <Link className="" to="/help"> Help </Link>
 
-                                        </li>
+                                        </li> */}
 
                                     </ul>
                                 </div>
