@@ -1,11 +1,14 @@
 import React from 'react';
 // import DashboardFooter from '../../parts/DashboardFooter';
 // import Sidebar from '../../parts/Sidebar';
+import { Helmet } from "react-helmet";
 
 const Dashboard = (props) => {
 	return (
 		<>
-
+			<Helmet>
+				<title>Dashboard - Javelin Traders</title>
+			</Helmet>
 			<div className='bord-design'>
 				<div className='container'>
 					<div className='row'>

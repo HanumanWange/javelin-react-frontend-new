@@ -5,6 +5,7 @@ import AxiosCall from '../../AxiosCall';
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import LoginImg from './login-one.png'
+import {Helmet} from "react-helmet";
 
 import './Login.scss'
 
@@ -71,7 +72,9 @@ const LoginPage = (props) => {
 
     return (
         <>
-
+            <Helmet>
+                <title>Login - Javelin Traders</title>
+            </Helmet>
             <ToastContainer />
             <div className='login-page' >
 

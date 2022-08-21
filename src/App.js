@@ -37,8 +37,6 @@ const App = () => {
 
 	const [state, setState] = useState({
 		data: {
-			// url:'http://127.0.0.1:8000',
-			// url: 'https://api.javelintraders.in',
 			url: API_HOST_URL,
 			user_data: {},
 			is_authenticated: false,

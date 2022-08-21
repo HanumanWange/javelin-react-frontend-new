@@ -4,6 +4,7 @@ import DashboardFooter from '../../parts/DashboardFooter';
 import AxiosCall from '../../AxiosCall';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {Helmet} from "react-helmet";
 
 
 const UserSubscription = (props) => {
@@ -151,6 +152,9 @@ const UserSubscription = (props) => {
 
     return (
         <>
+        <Helmet>
+                <title>My subscription - Javelin Traders</title>
+            </Helmet>
          <div className=" page-body-wrapper-one">
             <ToastContainer />
             <div className='d-lg-block d-none'>

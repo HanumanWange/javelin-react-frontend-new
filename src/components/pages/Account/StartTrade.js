@@ -6,6 +6,7 @@ import AxiosCall from '../../AxiosCall';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './account.scss'
+import {Helmet} from "react-helmet";
 
 const StartTrade = (props) => {
 	let { id } = useParams()
@@ -192,363 +193,365 @@ const StartTrade = (props) => {
 
 	return (
 		<>
-
-<ToastContainer />
-     <div className=" page-body-wrapper-one">
-
-            <div className='d-lg-block d-none'>
-                <Sidebar user={props.user} />
-            </div>
-             
-
-            <div className='bariconaccout d-lg-none'>
-                <i onClick={() => setShow(!show)} className='fa fa-bars' ></i>
-            </div>
-
-             <div >
-                 {
-                     show &&  <div className='menubaraccount'>
-                         <div className='iconshowde'>
-                            <i onClick={() => setShow(!show)} className='fa fa-close' ></i>
-                         </div>
-                     
-                     <Sidebar user={props.user} />
-                  </div>
-                 }
-               
-             </div>
-
-
-                <div className="main-panel">
-
-                    <div className="content-wrapper">
-
-                        <div className="row">
-                            <div className="col-md-12 grid-margin border stretch-card  shadow-sm rounded">
-                                <div className="card position-relative">
-                                    <div className="card-body">
-                                        <div id="detailedReports"
-                                            className="carousel slide detailed-report-carousel position-static pt-2"
-                                            data-ride="carousel">
-                                            {algo.data.algo ?
-                                                <div className="carousel-inner">
-
-                                                    <div className="carousel-item active">
-                                                        <div className="row">
-                                                            <div className="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
-                                                                <div className="ml-xl-4 mt-3">
-
-                                                                    {state.form.id == "start" ?
-                                                                        <p className="card-title">Start Trading </p>
-                                                                        :
-                                                                        <p className="card-title">Trading Id {state.form.id}</p>
-                                                                    }
-
-
-
-
-                                                                    <h1 className="text-primary">#{algo.data.subscription_id}</h1>
-                                                                    <h3 className="font-weight-500 mb-xl-4 text-primary">PNL</h3>
-                                                                    <p className="mb-2 mb-xl-0">
-
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                            <div className="col-md-12 col-xl-9">
-                                                                <div className="row">
-                                                                    <div className="col-md-6 border-right">
-                                                                        <div className="table-responsive mb-3 mb-md-0 mt-3">
-                                                                            <table className="table table-borderless report-table">
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td className="text-muted">Broker Name :</td>
-
-                                                                                        <td>
-                                                                                            <h5 className="font-weight-bold mb-0">
-                                                                                                {algo.data.algo.strategie_detail.broker_name}
-                                                                                            </h5>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td className="text-muted">Product Name :</td>
-
-                                                                                        <td>
-                                                                                            <h5 className="font-weight-bold mb-0">
-                                                                                                {algo.data.algo.strategie_detail.product_name}
-                                                                                            </h5>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td className="text-muted">Algo Name :</td>
-
-                                                                                        <td>
-                                                                                            <h5 className="font-weight-bold mb-0">
-                                                                                                {algo.data.algo.name}
-                                                                                            </h5>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td className="text-muted">Strategy Code :</td>
-
-                                                                                        <td>
-                                                                                            <h5 className="font-weight-bold mb-0">
-                                                                                                {algo.data.algo.strategie_detail.code}
-                                                                                            </h5>
-                                                                                        </td>
-                                                                                    </tr>
-
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="col-md-6 mt-3">
-                                                                        <div className='card' >
-                                                                            <div className='card-body' >
-                                                                                <h4 className="card-title">Trading Form</h4>
-
-                                                                                <div className="forms-sample">
-                                                                                    <div className="form-group mb-4">
-                                                                                        <label className='mb-2' for="exampleInputUsername1">Subscription</label>
-                                                                                        <select className="form-control"
-                                                                                            name="subscription"
-                                                                                            onChange={(e) => on_change_fun(e)}
-                                                                                        >
-
-                                                                                            {subs.data.results ?
-                                                                                                subs.data.results.map((i, id) => (
-
-                                                                                                    state.form.subscription == i.id ?
-
-                                                                                                        <>
-                                                                                                            <option value={id} key={id} selected>{i.algo.name}</option>
-                                                                                                        </>
-                                                                                                        :
-                                                                                                        <>
-                                                                                                            <option value={id} key={id}>{i.algo.name}</option>
-                                                                                                        </>
-
-                                                                                                ))
-
-                                                                                                :
-                                                                                                <option value="err">No data Found</option>
-                                                                                            }
-
-                                                                                        </select>
-                                                                                    </div>
-
-                                                                                    <div className="form-group mb-4">
-                                                                                        <label className='mb-2'>Quantity</label>
-                                                                                        <input type="number"
-                                                                                            value={state.form.qty}
-                                                                                            onChange={(e) => on_change_fun(e)}
-                                                                                            name="qty" className="form-control" />
-                                                                                    </div>
-
-                                                                                    {state.form.id == "start" ?
-                                                                                        <>
-                                                                                            <button type="submit" onClick={() => start_trade('start')} className="btn btn-success mr-2">Start</button>
-
-                                                                                        </>
-                                                                                        :
-                                                                                        <>
-                                                                                            {trade.data.status == 'stop' ?
-
-                                                                                                <button type="submit"
-                                                                                                    onClick={() => start_trade('start')} className="btn btn-success mr-2">
-                                                                                                    Start
-                                                                                                </button>
-                                                                                                :
-                                                                                                <>
-
-                                                                                                    {trade.data.status == 'squre_off' ?
-                                                                                                        ''
-                                                                                                        :
-
-                                                                                                        <button type="submit"
-                                                                                                            onClick={() => start_trade('squre_off')}
-                                                                                                            className="btn btn-info text-light mr-2">
-                                                                                                            Squre Off
-                                                                                                        </button>
-                                                                                                    }
-
-                                                                                                    <button type="submit"
-                                                                                                        onClick={() => start_trade('stop')}
-                                                                                                        className="btn btn-danger text-light mr-2">
-                                                                                                        Stop
-                                                                                                    </button>
-                                                                                                </>
-
-
-
-
-
-                                                                                            }
-
-                                                                                        </>
-                                                                                    }
-
-
-
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                :
-                                                ''
-                                            }
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {state.form.id != "start" ?
-
-                            <div className="row">
-
-                                <div className="col-md-12 grid-margin stretch-card stretch-card border shadow-sm rounded">
-
-                                    <div className="card">
-                                        <div className="card-body">
-                                            <p className="card-title">Trade Order</p>
-                                            <div className="row">
-                                                <div className="col-12">
-                                                    <div className="table-responsive">
-                                                        <div id="example_wrapper" className="dataTables_wrapper dt-bootstrap4 no-footer">
-                                                            <div className="row">
-                                                                <div className="col-sm-12 col-md-6"></div>
-                                                                <div className="col-sm-12 col-md-6"></div>
-                                                            </div>
-                                                            <div className="row">
-                                                                <div className="col-sm-12">
-                                                                    <table className="display expandable-table dataTable no-footer"
-                                                                        style={{ width: "100%" }} role="grid">
-
-
-                                                                        <thead>
-                                                                            <tr role="row">
-                                                                                <th className="select-checkbox sorting_disabled" rowspan="1"
-                                                                                    colspan="1" aria-label="Quote#"
-                                                                                    style={{ width: "110px" }}>
-
-                                                                                    Order ID#</th>
-                                                                                <th className="sorting_asc" tabindex="0"
-                                                                                    aria-controls="example" rowspan="1" colspan="1"
-                                                                                    aria-label="Product: activate to sort column descending"
-                                                                                    aria-sort="ascending" style={{ width: "124px" }}>
-                                                                                    Order Type
-                                                                                </th>
-                                                                                <th className="sorting" tabindex="0" aria-controls="example"
-                                                                                    rowspan="1" colspan="1"
-                                                                                    aria-label="Business type: activate to sort column ascending"
-                                                                                    style={{ width: "148px" }}>Market Rate</th>
-                                                                                <th className="sorting" tabindex="0" aria-controls="example"
-                                                                                    rowspan="1" colspan="1"
-                                                                                    aria-label="Policy holder: activate to sort column ascending"
-                                                                                    style={{ width: "141px" }}>Quantity</th>
-
-                                                                                <th className="sorting" tabindex="0" aria-controls="example"
-                                                                                    rowspan="1" colspan="1"
-                                                                                    aria-label="Status: activate to sort column ascending"
-                                                                                    style={{ width: "102px" }}>Status</th>
-                                                                                <th className="sorting" tabindex="0" aria-controls="example"
-                                                                                    rowspan="1" colspan="1"
-                                                                                    aria-label="Updated at: activate to sort column ascending"
-                                                                                    style={{ width: "123px" }}>Created Time</th>
-
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            {trade.data.order ?
-                                                                                <>
-
-                                                                                    {trade.data.order.length == 0 ?
-                                                                                        <>
-                                                                                            <tr className="odd" key=''>
-                                                                                                <td >No Data Found!</td>
-                                                                                            </tr>
-                                                                                        </>
-                                                                                        :
-                                                                                        <>
-                                                                                            {trade.data.order.map((i, id) => (
-                                                                                                <tr className="odd" key={id}>
-                                                                                                    <td >#{i.order_id}</td>
-                                                                                                    <td className="sorting_1">
-                                                                                                        {i.order_type}
-                                                                                                    </td>
-                                                                                                    <td>₹ {i.market_rate}</td>
-                                                                                                    <td>{i.qty}</td>
-                                                                                                    <td>{i.status}</td>
-
-                                                                                                    <td>
-                                                                                                        {new Date(i.created_at).toDateString()}
-                                                                                                        <p className='mt-1'>
-                                                                                                            {new Date(i.created_at).toLocaleTimeString()}
-                                                                                                        </p>
-
-                                                                                                    </td>
-
-                                                                                                </tr>
-
-                                                                                            ))}
-
-
-                                                                                        </>
-                                                                                    }
-                                                                                </>
-                                                                                :
-                                                                                ''
-                                                                            }
-
-
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                            </div>
-                                                            <div className="row">
-                                                                <div className="col-sm-12 col-md-5"></div>
-                                                                <div className="col-sm-12 col-md-7"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <nav aria-label="Page navigation example">
-                                            <ul className="pagination justify-content-end pr-3">
-                                                <li className="page-item"><a className="page-link" href="#">Previous</a></li>
-                                                <li className="page-item"><a className="page-link" href="#">1</a></li>
-                                                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                                <li className="page-item"><a className="page-link" href="#">Next</a></li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                            :
-                            ''
-                        }
-
-                    </div>
-
-                    <DashboardFooter />
-
-                </div>
-            </div>
+			<Helmet>
+                <title>Dashboard - Javelin Traders</title>
+            </Helmet>
+			<ToastContainer />
+			<div className=" page-body-wrapper-one">
+
+				<div className='d-lg-block d-none'>
+					<Sidebar user={props.user} />
+				</div>
+
+
+				<div className='bariconaccout d-lg-none'>
+					<i onClick={() => setShow(!show)} className='fa fa-bars' ></i>
+				</div>
+
+				<div >
+					{
+						show && <div className='menubaraccount'>
+							<div className='iconshowde'>
+								<i onClick={() => setShow(!show)} className='fa fa-close' ></i>
+							</div>
+
+							<Sidebar user={props.user} />
+						</div>
+					}
+
+				</div>
+
+
+				<div className="main-panel">
+
+					<div className="content-wrapper">
+
+						<div className="row">
+							<div className="col-md-12 grid-margin border stretch-card  shadow-sm rounded">
+								<div className="card position-relative">
+									<div className="card-body">
+										<div id="detailedReports"
+											className="carousel slide detailed-report-carousel position-static pt-2"
+											data-ride="carousel">
+											{algo.data.algo ?
+												<div className="carousel-inner">
+
+													<div className="carousel-item active">
+														<div className="row">
+															<div className="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
+																<div className="ml-xl-4 mt-3">
+
+																	{state.form.id == "start" ?
+																		<p className="card-title">Start Trading </p>
+																		:
+																		<p className="card-title">Trading Id {state.form.id}</p>
+																	}
+
+
+
+
+																	<h1 className="text-primary">#{algo.data.subscription_id}</h1>
+																	<h3 className="font-weight-500 mb-xl-4 text-primary">PNL</h3>
+																	<p className="mb-2 mb-xl-0">
+
+																	</p>
+																</div>
+															</div>
+
+
+
+
+
+															<div className="col-md-12 col-xl-9">
+																<div className="row">
+																	<div className="col-md-6 border-right">
+																		<div className="table-responsive mb-3 mb-md-0 mt-3">
+																			<table className="table table-borderless report-table">
+																				<tbody>
+																					<tr>
+																						<td className="text-muted">Broker Name :</td>
+
+																						<td>
+																							<h5 className="font-weight-bold mb-0">
+																								{algo.data.algo.strategie_detail.broker_name}
+																							</h5>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td className="text-muted">Product Name :</td>
+
+																						<td>
+																							<h5 className="font-weight-bold mb-0">
+																								{algo.data.algo.strategie_detail.product_name}
+																							</h5>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td className="text-muted">Algo Name :</td>
+
+																						<td>
+																							<h5 className="font-weight-bold mb-0">
+																								{algo.data.algo.name}
+																							</h5>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td className="text-muted">Strategy Code :</td>
+
+																						<td>
+																							<h5 className="font-weight-bold mb-0">
+																								{algo.data.algo.strategie_detail.code}
+																							</h5>
+																						</td>
+																					</tr>
+
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																	<div className="col-md-6 mt-3">
+																		<div className='card' >
+																			<div className='card-body' >
+																				<h4 className="card-title">Trading Form</h4>
+
+																				<div className="forms-sample">
+																					<div className="form-group mb-4">
+																						<label className='mb-2' for="exampleInputUsername1">Subscription</label>
+																						<select className="form-control"
+																							name="subscription"
+																							onChange={(e) => on_change_fun(e)}
+																						>
+
+																							{subs.data.results ?
+																								subs.data.results.map((i, id) => (
+
+																									state.form.subscription == i.id ?
+
+																										<>
+																											<option value={id} key={id} selected>{i.algo.name}</option>
+																										</>
+																										:
+																										<>
+																											<option value={id} key={id}>{i.algo.name}</option>
+																										</>
+
+																								))
+
+																								:
+																								<option value="err">No data Found</option>
+																							}
+
+																						</select>
+																					</div>
+
+																					<div className="form-group mb-4">
+																						<label className='mb-2'>Quantity</label>
+																						<input type="number"
+																							value={state.form.qty}
+																							onChange={(e) => on_change_fun(e)}
+																							name="qty" className="form-control" />
+																					</div>
+
+																					{state.form.id == "start" ?
+																						<>
+																							<button type="submit" onClick={() => start_trade('start')} className="btn btn-success mr-2">Start</button>
+
+																						</>
+																						:
+																						<>
+																							{trade.data.status == 'stop' ?
+
+																								<button type="submit"
+																									onClick={() => start_trade('start')} className="btn btn-success mr-2">
+																									Start
+																								</button>
+																								:
+																								<>
+
+																									{trade.data.status == 'squre_off' ?
+																										''
+																										:
+
+																										<button type="submit"
+																											onClick={() => start_trade('squre_off')}
+																											className="btn btn-info text-light mr-2">
+																											Squre Off
+																										</button>
+																									}
+
+																									<button type="submit"
+																										onClick={() => start_trade('stop')}
+																										className="btn btn-danger text-light mr-2">
+																										Stop
+																									</button>
+																								</>
+
+
+
+
+
+																							}
+
+																						</>
+																					}
+
+
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+												:
+												''
+											}
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						{state.form.id != "start" ?
+
+							<div className="row">
+
+								<div className="col-md-12 grid-margin stretch-card stretch-card border shadow-sm rounded">
+
+									<div className="card">
+										<div className="card-body">
+											<p className="card-title">Trade Order</p>
+											<div className="row">
+												<div className="col-12">
+													<div className="table-responsive">
+														<div id="example_wrapper" className="dataTables_wrapper dt-bootstrap4 no-footer">
+															<div className="row">
+																<div className="col-sm-12 col-md-6"></div>
+																<div className="col-sm-12 col-md-6"></div>
+															</div>
+															<div className="row">
+																<div className="col-sm-12">
+																	<table className="display expandable-table dataTable no-footer"
+																		style={{ width: "100%" }} role="grid">
+
+
+																		<thead>
+																			<tr role="row">
+																				<th className="select-checkbox sorting_disabled" rowspan="1"
+																					colspan="1" aria-label="Quote#"
+																					style={{ width: "110px" }}>
+
+																					Order ID#</th>
+																				<th className="sorting_asc" tabindex="0"
+																					aria-controls="example" rowspan="1" colspan="1"
+																					aria-label="Product: activate to sort column descending"
+																					aria-sort="ascending" style={{ width: "124px" }}>
+																					Order Type
+																				</th>
+																				<th className="sorting" tabindex="0" aria-controls="example"
+																					rowspan="1" colspan="1"
+																					aria-label="Business type: activate to sort column ascending"
+																					style={{ width: "148px" }}>Market Rate</th>
+																				<th className="sorting" tabindex="0" aria-controls="example"
+																					rowspan="1" colspan="1"
+																					aria-label="Policy holder: activate to sort column ascending"
+																					style={{ width: "141px" }}>Quantity</th>
+
+																				<th className="sorting" tabindex="0" aria-controls="example"
+																					rowspan="1" colspan="1"
+																					aria-label="Status: activate to sort column ascending"
+																					style={{ width: "102px" }}>Status</th>
+																				<th className="sorting" tabindex="0" aria-controls="example"
+																					rowspan="1" colspan="1"
+																					aria-label="Updated at: activate to sort column ascending"
+																					style={{ width: "123px" }}>Created Time</th>
+
+																			</tr>
+																		</thead>
+																		<tbody>
+																			{trade.data.order ?
+																				<>
+
+																					{trade.data.order.length == 0 ?
+																						<>
+																							<tr className="odd" key=''>
+																								<td >No Data Found!</td>
+																							</tr>
+																						</>
+																						:
+																						<>
+																							{trade.data.order.map((i, id) => (
+																								<tr className="odd" key={id}>
+																									<td >#{i.order_id}</td>
+																									<td className="sorting_1">
+																										{i.order_type}
+																									</td>
+																									<td>₹ {i.market_rate}</td>
+																									<td>{i.qty}</td>
+																									<td>{i.status}</td>
+
+																									<td>
+																										{new Date(i.created_at).toDateString()}
+																										<p className='mt-1'>
+																											{new Date(i.created_at).toLocaleTimeString()}
+																										</p>
+
+																									</td>
+
+																								</tr>
+
+																							))}
+
+
+																						</>
+																					}
+																				</>
+																				:
+																				''
+																			}
+
+
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+															<div className="row">
+																<div className="col-sm-12 col-md-5"></div>
+																<div className="col-sm-12 col-md-7"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<nav aria-label="Page navigation example">
+											<ul className="pagination justify-content-end pr-3">
+												<li className="page-item"><a className="page-link" href="#">Previous</a></li>
+												<li className="page-item"><a className="page-link" href="#">1</a></li>
+												<li className="page-item"><a className="page-link" href="#">2</a></li>
+												<li className="page-item"><a className="page-link" href="#">3</a></li>
+												<li className="page-item"><a className="page-link" href="#">Next</a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+							:
+							''
+						}
+
+					</div>
+
+					<DashboardFooter />
+
+				</div>
+			</div>
 		</>
 	)
 }

@@ -12,6 +12,7 @@ import Aboutinner from './parts/Aboutinner';
 // import Tthree from './t3.png'
 import '../../../scss/Home.scss'
 import Slider from "react-slick";
+import {Helmet} from "react-helmet";
 
 
 const Home = (props) => {
@@ -116,7 +117,9 @@ const Home = (props) => {
 
     return (
         <>
-
+            <Helmet>
+                <title>Home - Javelin Traders</title>
+            </Helmet>
             <div className='banner-design'>
                 <div className='banner-inner'>
                     <div className='container'>

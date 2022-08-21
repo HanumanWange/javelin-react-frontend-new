@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Spinner from '../../parts/Spinner';
 import './account.scss'
+import {Helmet} from "react-helmet";
 
 
 
@@ -121,6 +122,9 @@ const AliceForm = (props) => {
 
     return (
         <>
+        <Helmet>
+            <title>Alice Credential Form - Javelin Traders</title>
+        </Helmet>
         <ToastContainer />
         <div className=" page-body-wrapper-one">
         <div className='d-lg-block d-none'>

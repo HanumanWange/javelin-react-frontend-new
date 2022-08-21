@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import AlgoInner from './parts/AlgoInner'
 import Footer from '../../parts/Footer'
+import {Helmet} from "react-helmet";
 
 const AllAlgo = (props) => {
 
@@ -17,7 +18,9 @@ const AllAlgo = (props) => {
     
     return (
         <>
-
+            <Helmet>
+                <title>Algo Trading - Javelin Traders</title>
+            </Helmet>
             <div >
                 <div className='colorAlgoone' >
                 

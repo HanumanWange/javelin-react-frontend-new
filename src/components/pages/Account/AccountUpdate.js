@@ -4,6 +4,7 @@ import DashboardFooter from '../../parts/DashboardFooter';
 import AxiosCall from '../../AxiosCall';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {Helmet} from "react-helmet";
 
 const AccountUpdate = (props) => {
 
@@ -73,6 +74,9 @@ const AccountUpdate = (props) => {
 
     return (
         <>
+            <Helmet>
+                <title>Profile - Javelin Traders</title>
+            </Helmet>
             <ToastContainer />
 
             <div className=" page-body-wrapper-one">

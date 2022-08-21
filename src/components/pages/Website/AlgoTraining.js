@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Footer from '../../parts/Footer';
 import Training from '../../parts/Trainings';
+import {Helmet} from "react-helmet";
 
 const AlgoTraining = () => {
 
@@ -17,7 +18,9 @@ const AlgoTraining = () => {
 
     return (
         <>
-       
+            <Helmet>
+                <title>Trainings - Javelin Traders</title>
+            </Helmet>
 
             <div >
 

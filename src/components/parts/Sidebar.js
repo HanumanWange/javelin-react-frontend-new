@@ -83,14 +83,14 @@ const Sidebar = (props) => {
                     <li className="nav-item">
                         <Link className="nav-link" to="/account/trade">
                             <i className="icon-bar-graph menu-icon"></i>
-                            <span className="menu-title">All Trade</span>
+                            <span className="menu-title">All Trades</span>
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/account/profile">
                             <i className="icon-head menu-icon"></i>
-                            <span className="menu-title">Profile</span>
+                            <span className="menu-title">Update Profile</span>
                         </Link>
                     </li>
 
