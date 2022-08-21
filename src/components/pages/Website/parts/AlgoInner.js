@@ -108,9 +108,9 @@ const AlgoInner = ({ user }) => {
                 <div className="slider-javlin box-j-sliderBox">
                     <div className='heading one' >
                         <h2 className="about-heading text-center ">Javlin
-                            {query == '0' ?
-                                " " + 'Alice ' : " " + "Zerodha "}
-                            Products</h2>
+                            {/* {query == '0' ?
+                                " " + 'Alice ' : " " + "Zerodha "} */}
+                             Products</h2>
                         <div className='line-bar mx-auto' ></div>
                     </div>
                     <div className='dropbox-design mb-4 px-4'>
@@ -151,11 +151,7 @@ const AlgoInner = ({ user }) => {
                                                    - 25
                                                 </b></span>
                                             </div>
-                                            <h5 className=' test-text'> ROI - <span className='text-success'>34.25%</span></h5>
-
-
-
-
+                                            <h5 className=' test-text'> ROI - <span className='text-success'>100%</span></h5>
                                             <Link to={"/trading/2"}
                                                 className="btn button mt-2">Know
                                                 More</Link>
@@ -179,7 +175,7 @@ const AlgoInner = ({ user }) => {
                                                     test
                                                 </b></span>
                                             </div>
-                                            <h5 className=' test-text'> ROI - <span className='text-success'>34.25%</span></h5>
+                                            <h5 className=' test-text'> ROI - <span className='text-success'>--</span></h5>
 
 
 
@@ -206,7 +202,7 @@ const AlgoInner = ({ user }) => {
                                                     test
                                                 </b></span>
                                             </div>
-                                            <h5 className=' test-text'> ROI - <span className='text-success'>34.25%</span></h5>
+                                            <h5 className=' test-text'> ROI - <span className='text-success'>--</span></h5>
                                             <Link to={"/trading/"}
                                                 className="btn button mt-2">Comming Soon</Link>
                                         </div>

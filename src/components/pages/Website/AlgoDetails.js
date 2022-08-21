@@ -103,12 +103,12 @@ const AlgoDetails = ({ user }) => {
               <div className='algodetails-contact' >
                 <div className='row'>
                   <div className='col-lg-6'>
-                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                    {/* <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
 
                       <div className="carousel-inner">
 
                         <div className="carousel-item active">
-                          <img className="d-block algo-crousel w-100" src="/static/images/aimg-1.png" alt="First slide" />
+                          <img className="d-block algo-crousel w-100" src="/static/images/aimg1.png" alt="First slide" />
                         </div>
 
                         <div className="carousel-item">
@@ -131,7 +131,8 @@ const AlgoDetails = ({ user }) => {
                         <span className="sr-only">Next</span>
                       </a>
 
-                    </div>
+                    </div> */}
+                    <img className='w-100 chartimg'  src="/static/images/aimg1.png" />
                   </div>
                   <div className='col-lg-6'>
 
@@ -182,6 +183,7 @@ const AlgoDetails = ({ user }) => {
               </div>
 
             </div>
+            
           }
 
 
@@ -190,8 +192,8 @@ const AlgoDetails = ({ user }) => {
       </div>
 
 
-      {/* <div className="container-fluid p-0">
-        <div className="content-wrapper d-flex align-items-center justify-content-center">
+      <div className="container-fluid p-0">
+        {/* <div className="content-wrapper d-flex align-items-center justify-content-center">
           {state.data == null ?
             'Loading.......'
             :
@@ -291,7 +293,7 @@ const AlgoDetails = ({ user }) => {
           }
 
 
-        </div>
+        </div> */}
         {subs.data ?
 
 
@@ -320,8 +322,8 @@ const AlgoDetails = ({ user }) => {
           </div>
           : ''}
 
-        <Footer />
-      </div> */}
+        {/* <Footer /> */}
+      </div>
 
       <Footer/>
 

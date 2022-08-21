@@ -766,7 +766,7 @@ const Home = (props) => {
             <div className='accomation-slider'>
                 <div className='container'>
                     <div className='heading'>
-                        <h2 className="about-heading text-center ">About Us</h2>
+                        <h2 className="about-heading text-center ">Testimonials</h2>
                         <div className='line-bar mx-auto' ></div>
                     </div>
                     <Slider {...settingsone}>
