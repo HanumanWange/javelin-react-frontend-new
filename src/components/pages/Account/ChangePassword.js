@@ -69,7 +69,7 @@ const ChangePassword = (props) => {
         }
         else if (nam === 'new2_password') {
 
-            console.log(val, newPass.val, new2Pass.val)
+            // console.log(val, newPass.val, new2Pass.val)
 
 
 

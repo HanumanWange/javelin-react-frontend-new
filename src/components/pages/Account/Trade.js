@@ -77,7 +77,7 @@ const Trade = (props) => {
                  }
                
              </div>
-            {console.log(state)}
+            {/* {console.log(state)} */}
             <div className="main-panel">
 
                 <div className="content-wrapper">

@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+/* eslint-disable react-hooks/exhaustive-deps */
 import './App.css';
-import React, { StrictMode, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Switch, Route, Link, useHistory } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Navbar from './components/parts/Navbar';
-import ColourTheme from './components/parts/ColourTheme';
+// import ColourTheme from './components/parts/ColourTheme';
 import Home from './components/pages/Website/Home';
 import LoginPage from './components/pages/Auth/LoginPage';
 import SigninPage from './components/pages/Auth/SigninPage';
@@ -27,183 +27,145 @@ import PrivacyPolicy from './components/pages/Website/PrivacyPolicy';
 import TermsCondition from './components/pages/Website/TermsCondition';
 import RefundPolicy from './components/pages/Website/RefundPolicy';
 import HelpPage from './components/pages/Website/HelpPage';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import { API_HOST_URL } from './config';
 
-
+const queryClient = new QueryClient();
 
 const App = () => {
 
-  const [state, setState] = useState({
-    data:{
-      // url:'http://127.0.0.1:8000',
-      url:'https://api.javelintraders.in',
-      // url:'https://trade2.coder-i.com',
-      user_data : {},
-      is_authenticated:false,
-      loading:true
-    }
-  })
+	const [state, setState] = useState({
+		data: {
+			// url:'http://127.0.0.1:8000',
+			// url: 'https://api.javelintraders.in',
+			url: API_HOST_URL,
+			user_data: {},
+			is_authenticated: false,
+			loading: true
+		}
+	})
 
-  async function load_data(){
-    
-      let my_data = JSON.parse(localStorage.getItem('user_data'))
-      let update_state = state.data
-      if (my_data){
-        
-        await AxiosCall({method:'get', url:state.data.url+'/api/',
-                         is_auth:true,}).then(resp=>{
-          if (resp.response === true){
-            
-            update_state.user_data = my_data
-            update_state.is_authenticated = true
-            setState({data:update_state})
-            
-          }
-          else{
-            localStorage.removeItem('user_data')
-          }
-        })
-        
-      }
-      update_state.loading = false
-      setState({data:update_state})
-  }
+	async function load_data() {
+		let my_data = JSON.parse(localStorage.getItem('user_data'))
+		let update_state = state.data
+		if (my_data) {
 
-  useEffect(() => {
-    let mounted = true
-        
-    if (mounted){
-        load_data()
-    }
-    return () => {
-        mounted = false
-    }
+			await AxiosCall({
+				method: 'get', url: state.data.url + '/api/',
+				is_auth: true,
+			}).then(resp => {
+				if (resp.response === true) {
 
+					update_state.user_data = my_data
+					update_state.is_authenticated = true
+					setState({ data: update_state })
+				}
+				else {
+					localStorage.removeItem('user_data')
+				}
+			})
+		}
+		update_state.loading = false
+		setState({ data: update_state })
+	}
 
-  }, [])
+	useEffect(() => {
+		let mounted = true
+		if (mounted) {
+			load_data()
+		}
+		return () => {
+			mounted = false
+		}
+	}, [])
 
-  return (
+	return (
+		<QueryClientProvider client={queryClient}>
+			<div className="container-scroller">
+				<Navbar user={state.data} />
+				<div >
+					<Switch>
+						{/* Home Path  */}
+						<Route exact path="/">
+							<Home user={state.data} />
+						</Route>
+						<Route exact path="/about">
+							<About user={state.data} />
+						</Route>
+						<Route exact path="/trading">
+							<AllAlgo user={state.data} />
+						</Route>
+						<Route exact path="/trading/:id">
+							<AlgoDetails user={state.data} />
+						</Route>
+						<Route exact path="/traning">
+							<AlgoTraining />
+						</Route>
+						<Route exact path="/terms&conditions">
+							<TermsCondition />
+						</Route>
+						<Route exact path="/privacy-policy">
+							<PrivacyPolicy />
+						</Route>
+						<Route exact path="/refund-policy">
+							<RefundPolicy />
+						</Route>
+						<Route exact path="/help">
+							<HelpPage />
+						</Route>
+						<Route exact path="/login">
+							<LoginPage user={state.data} />
+						</Route>
+						<Route exact path="/signin">
+							<SigninPage user={state.data} />
+						</Route>
 
-      <>
+						{/* Account Path  */}
+						<Route exact path="/account">
+							<Dashboard user={state.data} />
+						</Route>
+						<Route exact path="/account/profile">
+							<AccountUpdate user={state.data} />
+						</Route>
+						<Route exact path="/account/change-password">
+							<ChangePassword user={state.data} />
+						</Route>
 
-        <div className="container-scroller">
+						{/* Alice Form Path */}
+						<Route exact path="/account/alice-form">
+							<AliceForm user={state.data} />
+						</Route>
 
-          <Navbar user={state.data}/>
-          
-          <div >
-            
+						{/* Zerodha Form Path */}
+						<Route exact path="/account/zerodha-form">
+							<ZerodhaForm user={state.data} />
+						</Route>
 
-            <Switch>
-            {/* Home Path  */}
-            <Route exact path="/">
-              <Home user={state.data}/>
-            </Route>
+						{/* Trade Path */}
+						<Route exact path="/account/trade">
+							<Trade user={state.data} />
+						</Route>
+						<Route exact path="/account/trade/:id">
+							<StartTrade user={state.data} />
+						</Route>
 
-            <Route exact path="/about">
-              <About user={state.data}/>
-            </Route>
-
-            <Route exact path="/trading">
-              <AllAlgo user={state.data}/>
-            </Route>
-            
-            <Route exact path="/trading/:id">
-              <AlgoDetails user={state.data}/>
-            </Route>
-
-
-            <Route exact path="/traning">
-              <AlgoTraining/>
-            </Route>
-
-            <Route exact path="/terms&conditions">
-              <TermsCondition/>
-            </Route>
-
-            <Route exact path="/privacy-policy">
-              <PrivacyPolicy/>
-            </Route>
-
-            <Route exact path="/refund-policy">
-              <RefundPolicy/>
-            </Route>
-
-            <Route exact path="/help">
-              <HelpPage/>
-            </Route>
-
-            <Route exact path="/login">
-              <LoginPage user={state.data}/>
-            </Route>
-
-            <Route exact path="/signin">
-              <SigninPage user={state.data}/>
-            </Route>
-
-            {/* Account Path  */}
-            <Route exact path="/account">
-              <Dashboard user={state.data}/>
-            </Route>
-
-            <Route exact path="/account/profile">
-              <AccountUpdate user={state.data}/>
-            </Route>
-
-            <Route exact path="/account/change-password">
-              <ChangePassword user={state.data}/>
-            </Route>
-
-            {/* Alice Form Path */}
-            <Route exact path="/account/alice-form">
-              <AliceForm user={state.data}/>
-            </Route>
-
-            {/* Zerodha Form Path */}
-            <Route exact path="/account/zerodha-form">
-              <ZerodhaForm user={state.data}/>
-            </Route>
-
-            {/* Trade Path */}
-            <Route exact path="/account/trade">
-              <Trade user={state.data}/>
-            </Route>
-            <Route exact path="/account/trade/:id">
-              <StartTrade user={state.data}/>
-            </Route>
-
-            {/* Subscription Path */}
-            <Route exact path="/account/billing-report">
-              <BillingReport user={state.data}/>
-            </Route>
-
-            <Route exact path="/account/my-subscription">
-              <UserSubscription user={state.data}/>
-            </Route>
-
-            <Route exact path="/account/all-subscription">
-              <AllSubscription user={state.data}/>
-            </Route>
-
-
-
-        </Switch>
-
-
-
-
-          </div>
-        </div>
-
-
-
-
-
-        
-
-
-
-      </>
-  
-  )
+						{/* Subscription Path */}
+						<Route exact path="/account/billing-report">
+							<BillingReport user={state.data} />
+						</Route>
+						<Route exact path="/account/my-subscription">
+							<UserSubscription user={state.data} />
+						</Route>
+						<Route exact path="/account/all-subscription">
+							<AllSubscription user={state.data} />
+						</Route>
+					</Switch>
+				</div>
+			</div>
+			<ReactQueryDevtools initialIsOpen={false} position='bottom-left'/>
+		</QueryClientProvider>
+	)
 }
 
 export default App

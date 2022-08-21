@@ -47,7 +47,7 @@ const UserSubscription = (props) => {
         await AxiosCall({ method: 'get', url: `${props.user.url}/api/subscription/`, is_auth: true }).then(resp => {
 
             if (resp.response == true) {
-                console.log(resp)
+                // console.log(resp)
                 setState({ data: resp.bknd_data })
             }
             setLoading(false)
@@ -573,7 +573,7 @@ const UserSubscription = (props) => {
                             </div>
                         </div>
                     </div>
-                    {console.log(state.data)}
+                    {/* {console.log(state.data)} */}
 
 
                 </div>

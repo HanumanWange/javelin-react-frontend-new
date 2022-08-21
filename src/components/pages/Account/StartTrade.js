@@ -68,7 +68,7 @@ const StartTrade = (props) => {
 		setLoading(true)
 		let update = state.form
 		await AxiosCall({ method: 'get', url: `${props.user.url}/api/subscription/`, is_auth: true }).then(resp => {
-			console.log(resp)
+			// console.log(resp)
 			if (resp.response === true) {
 
 

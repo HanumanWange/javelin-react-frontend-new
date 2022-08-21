@@ -339,7 +339,7 @@ const AlgoSubscriptionList = (props) => {
                 </div>
 
                 <DashboardFooter />
-                {console.log(state.data)}
+                {/* {console.log(state.data)} */}
 
             </div>
         </div>                                                        

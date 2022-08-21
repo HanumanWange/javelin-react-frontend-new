@@ -25,7 +25,7 @@ const AlgoDetails = ({ user }) => {
 
   async function load_data() {
     await AxiosCall({ method: 'get', url: `${user.url}/api/strategie/${id}` }).then(resp => {
-      console.log("RESP DTL------>>>", resp)
+    //   console.log("RESP DTL------>>>", resp)
       if (resp.response == true) {
         setState({ data: resp.bknd_data })
         if (resp.bknd_data.algos.length != 0) {
