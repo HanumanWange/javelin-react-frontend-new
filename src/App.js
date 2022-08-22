@@ -32,6 +32,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import { API_HOST_URL } from './config';
 import ForgotPasswordPage from './components/pages/Auth/ForgotPasswordPage';
 import PasswordResetPage from './components/pages/Auth/PasswordResetPage';
+import TestSocketPage from './components/pages/TestSocketPage';
 
 const queryClient = new QueryClient();
 
@@ -119,6 +120,9 @@ const App = () => {
 						</Route>
 						<Route exact path="/signin">
 							<SigninPage user={state.data} />
+						</Route>
+						<Route exact path="/test/:slug">
+							<TestSocketPage user={state.data} />
 						</Route>
 
 						{/* Account Path  */}

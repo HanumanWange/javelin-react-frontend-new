@@ -55,7 +55,7 @@ const PasswordResetPage = (props) => {
                         {tokenStatus.is_valid ?
                             <div className='col-lg-6'>
                                 <div className='login-text'>
-                                    <h4>Forgot Password</h4>
+                                    <h4>Reset Password</h4>
                                     <PasswordResetForm
                                         response={response}
                                         handleSubmit={handleSubmit}
