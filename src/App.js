@@ -30,6 +30,8 @@ import HelpPage from './components/pages/Website/HelpPage';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { API_HOST_URL } from './config';
+import ForgotPasswordPage from './components/pages/Auth/ForgotPasswordPage';
+import PasswordResetPage from './components/pages/Auth/PasswordResetPage';
 
 const queryClient = new QueryClient();
 
@@ -128,6 +130,12 @@ const App = () => {
 						</Route>
 						<Route exact path="/account/change-password">
 							<ChangePassword user={state.data} />
+						</Route>
+						<Route exact path="/account/forgot-password">
+							<ForgotPasswordPage user={state.data} />
+						</Route>
+						<Route exact path="/account/forgot-password/:uidb64/:token">
+							<PasswordResetPage user={state.data} />
 						</Route>
 
 						{/* Alice Form Path */}

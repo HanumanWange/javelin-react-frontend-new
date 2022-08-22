@@ -1,6 +1,11 @@
 body{
   overflow-x: hidden;
 }
+
+.error{
+    color: #dc3545;
+}
+
 .sidebar-offcanvas ul{
   padding-top: 0 !important;
 }

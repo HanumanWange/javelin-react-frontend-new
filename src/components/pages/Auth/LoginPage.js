@@ -116,8 +116,8 @@ const LoginPage = (props) => {
                                     </div>
                                 </div>
                                 <div className="mt-4 d-flex justify-content-end align-items-center">
-
-                                    <a href="#" className="auth-link text-black">Forgot password?</a>
+                                    <Link to="/account/forgot-password" className="auth-link text-black"><a>Forgot password?</a></Link>
+                                    
                                 </div>
                                 <div className='d-flex justify-content-center'>
                                     <button className="btn signbtn "
