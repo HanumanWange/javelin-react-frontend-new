@@ -6,7 +6,7 @@ import AxiosCall from '../../AxiosCall';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './account.scss'
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 const StartTrade = (props) => {
 	let { id } = useParams()
@@ -194,8 +194,8 @@ const StartTrade = (props) => {
 	return (
 		<>
 			<Helmet>
-                <title>Dashboard - Javelin Traders</title>
-            </Helmet>
+				<title>Dashboard - Javelin Traders</title>
+			</Helmet>
 			<ToastContainer />
 			<div className=" page-body-wrapper-one">
 
@@ -241,26 +241,16 @@ const StartTrade = (props) => {
 															<div className="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
 																<div className="ml-xl-4 mt-3">
 
-																	{state.form.id == "start" ?
+																	{state.form.id === "start" ?
 																		<p className="card-title">Start Trading </p>
 																		:
 																		<p className="card-title">Trading Id {state.form.id}</p>
 																	}
-
-
-
-
 																	<h1 className="text-primary">#{algo.data.subscription_id}</h1>
-																	<h3 className="font-weight-500 mb-xl-4 text-primary">PNL</h3>
-																	<p className="mb-2 mb-xl-0">
-
-																	</p>
+																	<h3 className="font-weight-500 mb-xl-4 text-primary">PNL - This is log</h3>
+																	
 																</div>
 															</div>
-
-
-
-
 
 															<div className="col-md-12 col-xl-9">
 																<div className="row">
@@ -412,6 +402,24 @@ const StartTrade = (props) => {
 											}
 
 										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className="row mt-3">
+							<div className="col-md-12 grid-margin border stretch-card  shadow-sm rounded">
+								<div className="card position-relative">
+									<div className="card-body">
+										<p>kdsakda</p>
+										<p>kdsakda</p>
+										<p>kdsakda</p>
+										<p>kdsakda</p>
+										<p>kdsakda</p>
+										<p>kdsakda</p>
+										<p>kdsakda</p>
+										<p>kdsakda</p>
+										<p>kdsakda</p>
+										<p>kdsakda</p>
 									</div>
 								</div>
 							</div>
