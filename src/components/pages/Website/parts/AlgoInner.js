@@ -108,8 +108,7 @@ const AlgoInner = ({ user }) => {
                 <div className="slider-javlin box-j-sliderBox">
                     <div className='heading one' >
                         <h2 className="about-heading text-center ">Javlin
-                            {/* {query == '0' ?
-                                " " + 'Alice ' : " " + "Zerodha "} */}
+                          
                              Products</h2>
                         <div className='line-bar mx-auto' ></div>
                     </div>

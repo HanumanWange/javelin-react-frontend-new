@@ -87,7 +87,7 @@ const LoginPage = (props) => {
                             <div className='login-text'>
                                 <h4>
                                     Hello <br/>
-                                    WelCome back
+                                    Welcome back
                                 </h4>
                                 <div className="form-group">
                                     <input type="email"
