@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+.log_text{
+    font-family: 'Fira Code', monospace;
+    margin: 0 !important;
+}
+.console_row{
+    --bs-gutter-x: 0 !important;
+}
+/* Scroll Bar Design */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.3);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+a:-webkit-any-link:focus {
+    outline-offset: 1px;
+}
+a:hover{
+	transition: all 0.3s ease-in-out 0s
+}
+a:before{
+	transition: all 0.3s ease-in-out 0s
+}

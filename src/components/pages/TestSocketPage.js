@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { WS_HOST_URL } from '../../config';
 import { endpoints } from '../../config/endpoints';
@@ -74,6 +74,7 @@ export default function TestSocketPage() {
     
     return (
         <div>
+            {isOnline}
             <div>{isOnline ? 'Online' : 'Offline'}</div>
             <div>Received Messages: {msgCount}</div>
             <div>PNL: {pnl}</div>
