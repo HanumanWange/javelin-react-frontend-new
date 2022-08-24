@@ -29,7 +29,6 @@ export default function LogConsole({ id }) {
         ws.onmessage = (e) => {
             const json = JSON.parse(e.data);
             setIsOnline(true);
-			setLogs(logs => ['Connected to server...'])
             try {
                 if (json.payload){
                     
@@ -65,7 +64,7 @@ export default function LogConsole({ id }) {
 						<div className="card-body" style={{minHeight: 200}}>
 							<div class="d-flex justify-content-between align-items-center">
 								<h5>Console Log</h5>
-								{isOnline ? <span className="badge bg-danger">Live <span class="badge bg-dark">{msgCount}</span></span> 
+								{isOnline ? <span className="badge bg-success">Live <span class="badge bg-dark">{msgCount}</span></span> 
 								: 
 									<span class="badge bg-dark">Offline</span>}
 							</div>
