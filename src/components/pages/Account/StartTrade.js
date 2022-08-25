@@ -206,9 +206,9 @@ const StartTrade = (props) => {
 																	{state.form.id === "start" ?
 																		<p className="card-title">Start Trading </p>
 																		:
-																		<p className="card-title">Trading Id {state.form.id}</p>
+																		<p className="card-title">Trading Id: #{state.form.id}</p>
 																	}
-																	<h1 className="text-primary">#{algo.data.subscription_id}</h1>
+																	{/* <p className="text-primary">#{algo.data.subscription_id}</p> */}
                                                                     {id !== 'start' && <PNLSection id={id} />}{/* Added by Sanjay */}
                                                                     
 																</div>

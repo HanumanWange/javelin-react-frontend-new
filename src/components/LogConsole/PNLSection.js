@@ -33,6 +33,6 @@ export default function PNLSection({ id }) {
         }
     }, []);
 	return (
-		<h3 className="font-weight-500 mb-xl-4 text-primary">PNL - {pnl}</h3>
+		<h3 className="font-weight-500 mb-xl-4 text-primary">PNL: {pnl}</h3>
 	)
 }
