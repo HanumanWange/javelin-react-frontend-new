@@ -9,9 +9,7 @@ const RefundPolicy = () => {
 				<title>Refund - Javelin Traders</title>
 			</Helmet>
 			<div className="container-fluid">
-
 				<div className="content-wrapper">
-
 					<div className="row align-items-center justify-content-center my-4">
 
 						<div className=" shadow p-4 rounded" style={{ width: "90%" }}>
@@ -30,9 +28,7 @@ const RefundPolicy = () => {
 						</div>
 
 					</div>
-
 				</div>
-
 				<Footer />
 			</div >
 

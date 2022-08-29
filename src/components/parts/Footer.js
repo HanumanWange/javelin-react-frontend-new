@@ -76,7 +76,7 @@ const Footer = () => {
 
                                         </li>
 
-                                        {/* <li className="footer-links footer-section-address">
+                                         {/* <li className="footer-links footer-section-address">
 
                                             <Link className="" to="/privacy-policy"> Privacy Policy </Link>
 
@@ -86,13 +86,13 @@ const Footer = () => {
 
                                             <Link className="" to="/refund-policy"> Refund Policy </Link>
 
-                                        </li>
+                                        </li> */}
 
                                         <li className="footer-links footer-section-address">
 
-                                            <Link className="" to="/help"> Help </Link>
+                                            <a style={{color:"red"}}  href='https://docs.google.com/document/d/123QoplLIpoRta_HEn-HCGRrR7DtCpSxHg1j7uzIUm2Y/edit'  target="_blank"> Help </a>
 
-                                        </li> */}
+                                        </li> 
 
                                     </ul>
                                 </div>

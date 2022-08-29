@@ -13,6 +13,9 @@ import Aboutinner from './parts/Aboutinner';
 import '../../../scss/Home.scss'
 import Slider from "react-slick";
 import {Helmet} from "react-helmet";
+import mainone from "./man-1.jpg"
+import maintwo from "./man-2.jpg"
+import mainthree from "./man-3.jpg"
 
 
 const Home = (props) => {
@@ -777,14 +780,14 @@ const Home = (props) => {
                             <div className='boxset'>
                                 <div class="teseti-back">
                                     <div class="testimonials-photo">
-                                        <img src="https://bitrixinfotech.com/assets/uploads/admin/reviews/review_1549365450.png" alt="Riyaz Hadiyavala" />
+                                     <img src={mainone}  />
                                     </div>
                                     <div class="testimonials-name d-flex align-items-center mb-2">
-                                        <h4>Darshik Vadadoriya</h4>
-                                        - Faastdeal Ecom
+                                        <h4>Sandeep</h4>
+                                        - Full Time Traders
                                     </div>
                                     <div class="testimonials-desc">
-                                        <p className='mb-0'><i class="fa fa-quote-left"></i>&nbsp;&nbsp;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took &nbsp;&nbsp;<i class=" fa fa-quote-right"></i></p>
+                                        <p className='mb-0'><i class="fa fa-quote-left"></i>&nbsp;&nbsp;Javelin Traders is very much focused on giving 100% benefit-making strategies. I have been trading on their bot since the product was in beta mode. One of the best and most excellent platforms for trading the best strategies and complete guidance. &nbsp;&nbsp;<i class=" fa fa-quote-right"></i></p>
                                     </div>
                                 </div>
                             </div>
@@ -793,14 +796,14 @@ const Home = (props) => {
                             <div className='boxset'>
                                 <div class="teseti-back">
                                     <div class="testimonials-photo">
-                                        <img src="https://bitrixinfotech.com/assets/uploads/admin/reviews/review_1549365450.png" alt="Riyaz Hadiyavala" />
+                                        <img src={maintwo} />
                                     </div>
                                     <div class="testimonials-name d-flex align-items-center mb-2">
-                                        <h4>Darshik Vadadoriya</h4>
-                                        - Faastdeal Ecom
+                                        <h4>Sanjay</h4>
+                                        - Full Time Traders
                                     </div>
                                     <div class="testimonials-desc">
-                                        <p className='mb-0'><i class="fa fa-quote-left"></i>&nbsp;&nbsp;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took &nbsp;&nbsp;<i class=" fa fa-quote-right"></i></p>
+                                        <p className='mb-0'><i class="fa fa-quote-left"></i>&nbsp;&nbsp;I learned about the Derivatives and Options markets while trading with Javelin Traders. My experience with the company is memorable. The team is quite friendly. The research done by Javelin Traders is appreciable. - Thank You for your effort.&nbsp;&nbsp;<i class=" fa fa-quote-right"></i></p>
                                     </div>
                                 </div>
                             </div>
@@ -809,34 +812,19 @@ const Home = (props) => {
                             <div className='boxset'>
                                 <div class="teseti-back">
                                     <div class="testimonials-photo">
-                                        <img src="https://bitrixinfotech.com/assets/uploads/admin/reviews/review_1549365450.png" alt="Riyaz Hadiyavala" />
+                                        <img src={mainthree} alt="Riyaz Hadiyavala" />
                                     </div>
                                     <div class="testimonials-name d-flex align-items-center mb-2">
-                                        <h4>Darshik Vadadoriya</h4>
-                                        - Faastdeal Ecom
+                                        <h4>Naresh</h4>
+                                        - Full Time Traders
                                     </div>
                                     <div class="testimonials-desc">
-                                        <p className='mb-0'><i class="fa fa-quote-left"></i>&nbsp;&nbsp;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took &nbsp;&nbsp;<i class=" fa fa-quote-right"></i></p>
+                                        <p className='mb-0'><i class="fa fa-quote-left"></i>&nbsp;&nbsp;I am a working professional and now I need not worry about my trading I can handle my portfolio perfectly. - Best of luck to Javelin Traders waiting for more strategies and integrations. &nbsp;&nbsp;<i class=" fa fa-quote-right"></i></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className='ax-sliderbox'>
-                            <div className='boxset'>
-                                <div class="teseti-back">
-                                    <div class="testimonials-photo">
-                                        <img src="https://bitrixinfotech.com/assets/uploads/admin/reviews/review_1549365450.png" alt="Riyaz Hadiyavala" />
-                                    </div>
-                                    <div class="testimonials-name d-flex align-items-center mb-2">
-                                        <h4>Darshik Vadadoriya</h4>
-                                        - Faastdeal Ecom
-                                    </div>
-                                    <div class="testimonials-desc">
-                                        <p className='mb-0'><i class="fa fa-quote-left"></i>&nbsp;&nbsp;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took &nbsp;&nbsp;<i class=" fa fa-quote-right"></i></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      
 
 
                     </Slider>

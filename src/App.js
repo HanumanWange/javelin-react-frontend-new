@@ -126,9 +126,9 @@ const App = () => {
 						</Route>
 
 						{/* Account Path  */}
-						<Route exact path="/account">
+						{/* <Route exact path="/account/">
 							<Dashboard user={state.data} />
-						</Route>
+						</Route> */}
 						<Route exact path="/account/profile">
 							<AccountUpdate user={state.data} />
 						</Route>

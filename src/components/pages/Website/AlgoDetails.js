@@ -172,12 +172,12 @@ const AlgoDetails = ({ user }) => {
 													</Link>
 												</>
 												:
-												<a className="btn buttondesign" href="#" target="_blank">
-													Past Results
+												<a className="btn buttondesign" href="/login"  >
+													Subscribe
 												</a>
 											}
-											<a className="btn buttondesign" href="#" target="_blank">
-												View Excel File
+											<a className="btn buttondesign" href="https://docs.google.com/spreadsheets/d/1Nxuunc1pDqZGCxrmc4W6Dtyovp6LixK3tZq_xVjap_Y/edit#gid=1920313481" target="_blank">
+												Past Results
 											</a>
 
 										</div>

@@ -160,13 +160,17 @@ const AliceForm = (props) => {
 
                                     {state.data && !loading ?
                                         <>
-                                            <div className="row px-2 d-flex justify-content-between align-items-center">
+                                            <div className="px-2 ">
                                                 <h4 className="card-title">Alice Credential Form</h4>
+                                                <div className='d-flex  justify-content-end'>
+
+                                                
                                                 {state.data.is_valid ?
-                                                    <button type="submit" onClick={check_form} className="btn btn-success mr-2">Check</button>
+                                                    <button type="submit" onClick={check_form} className="btn btn-success mr-2 d-inline-block">Check</button>
                                                     :
                                                     ''
                                                 }
+                                                </div>
                                             </div>
 
 

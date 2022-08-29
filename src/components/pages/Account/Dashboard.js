@@ -9,7 +9,7 @@ const Dashboard = (props) => {
 			<Helmet>
 				<title>Dashboard - Javelin Traders</title>
 			</Helmet>
-			<div className='bord-design'>
+			<div className='bord-design d-none'>
 				<div className='container'>
 					<div className='row'>
 						<div className='col-3'>
@@ -337,13 +337,6 @@ const Dashboard = (props) => {
 					</div>
 				</div>
 			</div>
-
-
-
-
-
-
-
 		</>
 	)
 }

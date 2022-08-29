@@ -128,6 +128,9 @@ const LoginPage = (props) => {
                                 <div className="text-center mt-4 font-weight-light">
                                     Don't have an account? <Link to="/signin" className="text-primary">Create Account</Link>
                                 </div>
+                                <div className='mt-2 text-center'>
+                                    <a style={{color:"red"}} href='https://docs.google.com/document/d/123QoplLIpoRta_HEn-HCGRrR7DtCpSxHg1j7uzIUm2Y/edit' target="_blank" >Click Here For Help</a>
+                                </div>
                             </div>
                         </div>
                     </div>
