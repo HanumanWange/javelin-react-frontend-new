@@ -8,7 +8,7 @@ export const endpoints = {
         reset_password: 'accounts/v1/user/password/reset',  
     },
     ws: {
-        trade_log: 'ws/v1/tradelog',
-        trade_log_json: 'ws/v1/tradelog/json',
+        trade_log: 'ws/v1/log/trade',
+        pnl_log: 'ws/v1/log/pnl',
     }
 };
