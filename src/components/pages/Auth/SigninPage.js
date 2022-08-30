@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 import { Link, useHistory } from 'react-router-dom';
 import './Login.scss'
 import Logintwo from './login-two.png'
@@ -50,6 +49,7 @@ const SigninPage = (props) => {
         const data = await handleRegistration(first_name, last_name, email, contact, mc, city, state, password);
         
         if (data.status === 201){
+            toast.success('Registration successful.');
 			history.push('/login')
         } else {
             data.email && toast.error(data.email[0]);
@@ -78,7 +78,6 @@ const SigninPage = (props) => {
             <Helmet>
                 <title>Sign Up - Javelin Traders</title>
             </Helmet>
-			<ToastContainer />
 			<div className='login-page'>
 				<div className='container'>
 					<div className='row'>

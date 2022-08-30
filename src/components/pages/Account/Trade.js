@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../../parts/Sidebar';
 import DashboardFooter from '../../parts/DashboardFooter';
 import AxiosCall from '../../AxiosCall';
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+// import { toast } from "react-toastify";
 import { Link } from 'react-router-dom';
-import Spinner from '../../parts/Spinner';
+// import Spinner from '../../parts/Spinner';
 import { Helmet } from "react-helmet";
 
 const Trade = (props) => {
@@ -56,7 +58,6 @@ const Trade = (props) => {
 			<Helmet>
 				<title>All Trades - Javelin Traders</title>
 			</Helmet>
-			<ToastContainer />
 			<div className=" page-body-wrapper-one">
 
 
@@ -195,7 +196,7 @@ const Trade = (props) => {
 																					</>
 																				))}
 
-																				{state.data.results.length == 0 ?
+																				{state.data.results.length === 0 ?
 
 																					<tr className="odd">
 																						<td className="">No Data Found!</td>

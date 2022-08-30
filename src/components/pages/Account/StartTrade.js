@@ -1,11 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
-import { Link, useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import Sidebar from '../../parts/Sidebar';
 import DashboardFooter from '../../parts/DashboardFooter';
 import AxiosCall from '../../AxiosCall';
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 import './account.scss'
 import { Helmet } from "react-helmet";
 import LogConsole from '../../LogConsole';
@@ -169,7 +169,6 @@ const StartTrade = (props) => {
 			<Helmet>
 				<title>Dashboard - Javelin Traders</title>
 			</Helmet>
-			<ToastContainer />
 			<div className=" page-body-wrapper-one">
 				<div className='d-lg-block d-none'>
 					<Sidebar user={props.user} />

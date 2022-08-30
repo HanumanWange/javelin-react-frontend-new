@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 import { useState, useEffect } from 'react'
 import { Link, useParams, useHistory } from 'react-router-dom';
 import LoginImg from './login-one.png'
@@ -45,7 +44,6 @@ const PasswordResetPage = (props) => {
             <Helmet>
                 <title>Reset password - Javelin Traders</title>
             </Helmet>
-            <ToastContainer />
             <div className='login-page'>
                 <div className="container">
                     <div className='row align-items-center'    >
